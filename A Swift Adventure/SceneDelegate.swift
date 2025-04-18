@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = MainTabBarController()
         self.window = window
         window.makeKeyAndVisible()
+        CodeOverlayManager.shared.setupButton(in: window)
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

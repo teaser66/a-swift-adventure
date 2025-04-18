@@ -1,0 +1,25 @@
+//
+//  Extensions.swift
+//  A Swift Adventure
+//
+//  Created by Rob Faiella on 4/18/25.
+//
+
+import UIKit
+
+extension UIApplication {
+    func topViewController(
+        base: UIViewController? = UIApplication.shared.connectedScenes
+            .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+            .first?.rootViewController
+    ) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        } else if let tab = base as? UITabBarController {
+            return topViewController(base: tab.selectedViewController)
+        } else if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        return base
+    }
+}

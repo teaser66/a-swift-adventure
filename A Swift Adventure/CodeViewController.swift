@@ -136,3 +136,7 @@ class CodeViewController: UIViewController {
             .replacingOccurrences(of: " ", with: "&nbsp;")
     }
 }
+
+protocol CodeShowable {
+    var codeKey: String { get }
+}
