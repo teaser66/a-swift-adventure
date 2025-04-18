@@ -27,6 +27,14 @@ class CodeViewController: UIViewController {
         closeButton.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
         self.view.addSubview(closeButton)
         
+        // Add show this code button
+        let selfCodeButton = UIButton(type: .system)
+        selfCodeButton.setTitle("Show This Code", for: .normal)
+        selfCodeButton.translatesAutoresizingMaskIntoConstraints = false
+        selfCodeButton.addTarget(self, action: #selector(showOwnCode), for: .touchUpInside)
+        self.view.addSubview(selfCodeButton)
+
+        
         // Add "Open in Browser" button
         let openInBrowserButton = UIButton(type: .system)
         openInBrowserButton.setTitle("Open in Browser", for: .normal)
@@ -51,24 +59,40 @@ class CodeViewController: UIViewController {
         
         // Apply Auto Layout constraints
         NSLayoutConstraint.activate([
-            // Position close button at the top
-            closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
-            closeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
-            closeButton.heightAnchor.constraint(equalToConstant: 50),
-            closeButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            // Position "Open in Browser" button below the close button
-            openInBrowserButton.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10),
-            openInBrowserButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
-            openInBrowserButton.heightAnchor.constraint(equalToConstant: 50),
-            openInBrowserButton.widthAnchor.constraint(equalToConstant: 200),
-            
-            // Position WebView below the "Open in Browser" button
-            webView.topAnchor.constraint(equalTo: openInBrowserButton.bottomAnchor, constant: 10),
-            webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            // Close button
+              closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
+              closeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+              closeButton.heightAnchor.constraint(equalToConstant: 50),
+              closeButton.widthAnchor.constraint(equalToConstant: 100),
+              
+              // Open in Browser button
+              openInBrowserButton.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 10),
+              openInBrowserButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+              openInBrowserButton.heightAnchor.constraint(equalToConstant: 50),
+              openInBrowserButton.widthAnchor.constraint(equalToConstant: 200),
+              
+              // Self Code button BELOW the Open in Browser button
+              selfCodeButton.topAnchor.constraint(equalTo: openInBrowserButton.bottomAnchor, constant: 10),
+              selfCodeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+              selfCodeButton.heightAnchor.constraint(equalToConstant: 50),
+              selfCodeButton.widthAnchor.constraint(equalToConstant: 200),
+              
+              // WebView BELOW the Self Code button
+              webView.topAnchor.constraint(equalTo: selfCodeButton.bottomAnchor, constant: 10),
+              webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+              webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+              webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+    }
+    
+    @objc func showOwnCode() {
+        // Load the appropriate raw code URL based on the fileKey
+        let key = "CodeViewController"
+        if let urlString = codeURLs[key], let url = URL(string: urlString) {
+            loadCodeFromURL(url)
+        } else {
+            print("Error: No URL found for the provided key")
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
