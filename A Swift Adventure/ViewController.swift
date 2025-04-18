@@ -8,12 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Basic setup
+        self.view.backgroundColor = .white
+        
+        // Add button to present modal
+        let showCodeButton = UIButton(type: .system)
+        showCodeButton.setTitle("Show Code", for: .normal)
+        showCodeButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        showCodeButton.addTarget(self, action: #selector(showCode), for: .touchUpInside)
+        
+        self.view.addSubview(showCodeButton)
     }
-
-
+    
+    @objc func showCode() {
+        // Present the modal view
+        let codeViewController = CodeViewController()
+        codeViewController.fileKey = "DataManager" 
+        self.present(codeViewController, animated: true, completion: nil)
+    }
 }
 

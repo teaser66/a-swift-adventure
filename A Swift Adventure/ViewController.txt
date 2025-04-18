@@ -1,0 +1,97 @@
+import UIKit
+import WebKit
+
+class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Basic setup
+        self.view.backgroundColor = .white
+        
+        // Add button to present modal
+        let showCodeButton = UIButton(type: .system)
+        showCodeButton.setTitle("Show Code", for: .normal)
+        showCodeButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        showCodeButton.addTarget(self, action: #selector(showCode), for: .touchUpInside)
+        
+        self.view.addSubview(showCodeButton)
+    }
+    
+    @objc func showCode() {
+        // Present the modal view
+        let codeViewController = CodeViewController()
+        self.present(codeViewController, animated: true, completion: nil)
+    }
+}
+
+class CodeViewController: UIViewController {
+    
+    var webView: WKWebView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Setup WebView
+        webView = WKWebView(frame: self.view.frame)
+        self.view.addSubview(webView)
+        
+        // Load code from ViewController.swift
+        if let code = loadCodeFromFile(named: "ViewController") {
+            let escapedCode = escapeForHTML(code)
+            let htmlContent = generateHTML(for: escapedCode)
+            webView.loadHTMLString(htmlContent, baseURL: nil)
+        }
+        
+        // Add close button
+        let closeButton = UIButton(type: .system)
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.frame = CGRect(x: 20, y: 40, width: 100, height: 50)
+        closeButton.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
+        self.view.addSubview(closeButton)
+    }
+    
+    @objc func closeModal() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func loadCodeFromFile(named filename: String) -> String? {
+        if let fileURL = Bundle.main.url(forResource: filename, withExtension: "swift") {
+            do {
+                let code = try String(contentsOf: fileURL)
+                print("Code loaded: \(code)") // Debugging statement
+                return code
+            } catch {
+                print("Error loading code: \(error)") // If there's an error, print it
+            }
+        } else {
+            print("File not found") // Debugging statement
+        }
+        return nil
+    }
+    
+    func escapeForHTML(_ code: String) -> String {
+        return code
+            .replacingOccurrences(of: "&", with: "&amp;")
+            .replacingOccurrences(of: "<", with: "&lt;")
+            .replacingOccurrences(of: ">", with: "&gt;")
+            .replacingOccurrences(of: "\n", with: "<br/>")
+            .replacingOccurrences(of: " ", with: "&nbsp;")
+    }
+    
+    func generateHTML(for code: String) -> String {
+        return """
+        <html>
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+            <script>hljs.highlightAll();</script>
+        </head>
+        <body>
+            <pre><code class="language-swift">\(code)</code></pre>
+        </body>
+        </html>
+        """
+    }
+}
+
+
