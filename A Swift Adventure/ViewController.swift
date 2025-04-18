@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @objc func showCode() {
         // Present the modal view
         let codeViewController = CodeViewController()
-        codeViewController.fileKey = "DataManager" 
+        codeViewController.fileKey = "ViewController" 
         self.present(codeViewController, animated: true, completion: nil)
     }
 }
