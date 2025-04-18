@@ -1,0 +1,8 @@
+
+{
+    "DataManager": "https://raw.githubusercontent.com/teaser66/MoneyMachine/refs/heads/master/Money%20Machine/Managers/DataManager.swift",
+    "CodeViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift",
+    "ViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/ViewController.swift",
+    "AboutViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/AboutViewController.swift",
+    "BrowseViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/BrowseViewController.swift"
+}

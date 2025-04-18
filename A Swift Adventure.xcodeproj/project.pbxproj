@@ -17,7 +17,6 @@
 		5245050C2DB2E920008A8765 /* A_Swift_AdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245050B2DB2E920008A8765 /* A_Swift_AdventureTests.swift */; };
 		524505162DB2E920008A8765 /* A_Swift_AdventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505152DB2E920008A8765 /* A_Swift_AdventureUITests.swift */; };
 		524505182DB2E920008A8765 /* A_Swift_AdventureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505172DB2E920008A8765 /* A_Swift_AdventureUITestsLaunchTests.swift */; };
-		524505252DB2EA59008A8765 /* ViewController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 524505242DB2EA59008A8765 /* ViewController.txt */; };
 		524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505262DB2EC6E008A8765 /* CodeViewController.swift */; };
 		524505292DB2EF1D008A8765 /* CodeFiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 524505282DB2EF1D008A8765 /* CodeFiles.json */; };
 		5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245052A2DB2F661008A8765 /* MainTabBarController.swift */; };
@@ -59,7 +58,6 @@
 		524505112DB2E920008A8765 /* A Swift AdventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A Swift AdventureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524505152DB2E920008A8765 /* A_Swift_AdventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Swift_AdventureUITests.swift; sourceTree = "<group>"; };
 		524505172DB2E920008A8765 /* A_Swift_AdventureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Swift_AdventureUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		524505242DB2EA59008A8765 /* ViewController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.txt; sourceTree = "<group>"; };
 		524505262DB2EC6E008A8765 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		524505282DB2EF1D008A8765 /* CodeFiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CodeFiles.json; sourceTree = "<group>"; };
 		5245052A2DB2F661008A8765 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -117,17 +115,11 @@
 		524504F02DB2E91B008A8765 /* A Swift Adventure */ = {
 			isa = PBXGroup;
 			children = (
-				524504F12DB2E91B008A8765 /* AppDelegate.swift */,
-				524504F32DB2E91B008A8765 /* SceneDelegate.swift */,
-				524505302DB3066B008A8765 /* CodeOverlayManager.swift */,
-				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
-				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
-				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
-				524505262DB2EC6E008A8765 /* CodeViewController.swift */,
+				524505352DB307E0008A8765 /* Delegates */,
+				524505372DB307F4008A8765 /* Managers */,
 				524505342DB3074D008A8765 /* ViewControllers */,
-				524505322DB30699008A8765 /* Extensions.swift */,
-				524505282DB2EF1D008A8765 /* CodeFiles.json */,
-				524505242DB2EA59008A8765 /* ViewController.txt */,
+				524505362DB307E8008A8765 /* Extensions */,
+				524505382DB30811008A8765 /* DataFiles */,
 				524504F72DB2E91B008A8765 /* Main.storyboard */,
 				524504FD2DB2E91F008A8765 /* Assets.xcassets */,
 				524504FF2DB2E91F008A8765 /* LaunchScreen.storyboard */,
@@ -157,9 +149,46 @@
 		524505342DB3074D008A8765 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
 				524504F52DB2E91B008A8765 /* ViewController.swift */,
+				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
+				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
+				524505262DB2EC6E008A8765 /* CodeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		524505352DB307E0008A8765 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				524504F12DB2E91B008A8765 /* AppDelegate.swift */,
+				524504F32DB2E91B008A8765 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		524505362DB307E8008A8765 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				524505322DB30699008A8765 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		524505372DB307F4008A8765 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				524505302DB3066B008A8765 /* CodeOverlayManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		524505382DB30811008A8765 /* DataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				524505282DB2EF1D008A8765 /* CodeFiles.json */,
+			);
+			path = DataFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +298,6 @@
 				524504FE2DB2E91F008A8765 /* Assets.xcassets in Resources */,
 				524505012DB2E91F008A8765 /* Base in Resources */,
 				524504F92DB2E91C008A8765 /* Base in Resources */,
-				524505252DB2EA59008A8765 /* ViewController.txt in Resources */,
 				524505292DB2EF1D008A8765 /* CodeFiles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
