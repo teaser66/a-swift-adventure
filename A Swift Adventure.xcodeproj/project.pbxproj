@@ -20,6 +20,9 @@
 		524505252DB2EA59008A8765 /* ViewController.txt in Resources */ = {isa = PBXBuildFile; fileRef = 524505242DB2EA59008A8765 /* ViewController.txt */; };
 		524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505262DB2EC6E008A8765 /* CodeViewController.swift */; };
 		524505292DB2EF1D008A8765 /* CodeFiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 524505282DB2EF1D008A8765 /* CodeFiles.json */; };
+		5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245052A2DB2F661008A8765 /* MainTabBarController.swift */; };
+		5245052D2DB2F6B1008A8765 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */; };
+		5245052F2DB2F6BA008A8765 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245052E2DB2F6BA008A8765 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		524505242DB2EA59008A8765 /* ViewController.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.txt; sourceTree = "<group>"; };
 		524505262DB2EC6E008A8765 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		524505282DB2EF1D008A8765 /* CodeFiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CodeFiles.json; sourceTree = "<group>"; };
+		5245052A2DB2F661008A8765 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		5245052E2DB2F6BA008A8765 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				524504F12DB2E91B008A8765 /* AppDelegate.swift */,
 				524504F32DB2E91B008A8765 /* SceneDelegate.swift */,
 				524504F52DB2E91B008A8765 /* ViewController.swift */,
+				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
+				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
+				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
 				524505262DB2EC6E008A8765 /* CodeViewController.swift */,
 				524505282DB2EF1D008A8765 /* CodeFiles.json */,
 				524505242DB2EA59008A8765 /* ViewController.txt */,
@@ -274,9 +283,12 @@
 			files = (
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
 				524504F62DB2E91B008A8765 /* ViewController.swift in Sources */,
+				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
 				524504F22DB2E91B008A8765 /* AppDelegate.swift in Sources */,
 				524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */,
 				524504F42DB2E91B008A8765 /* SceneDelegate.swift in Sources */,
+				5245052F2DB2F6BA008A8765 /* AboutViewController.swift in Sources */,
+				5245052D2DB2F6B1008A8765 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,6 +71,20 @@ class CodeViewController: UIViewController {
         ])
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            print("Page finished loading")
+
+            // Inject viewport meta for mobile-friendly rendering
+            let viewportScript = """
+            var meta = document.createElement('meta');
+            meta.setAttribute('name', 'viewport');
+            meta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+            document.getElementsByTagName('head')[0].appendChild(meta);
+            """
+            
+            webView.evaluateJavaScript(viewportScript, completionHandler: nil)
+        }
+    
     @objc func closeModal() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -105,8 +119,7 @@ class CodeViewController: UIViewController {
             if let code = String(data: data, encoding: .utf8) {
                 DispatchQueue.main.async {
                     let escapedCode = self?.escapeForHTML(code)
-                    let htmlContent = self?.generateHTML(for: escapedCode ?? "")
-                    self?.webView.loadHTMLString(htmlContent ?? "", baseURL: nil)
+                    self?.webView.loadHTMLString(escapedCode ?? "", baseURL: nil)
                 }
             }
         }
@@ -121,20 +134,5 @@ class CodeViewController: UIViewController {
             .replacingOccurrences(of: ">", with: "&gt;")
             .replacingOccurrences(of: "\n", with: "<br/>")
             .replacingOccurrences(of: " ", with: "&nbsp;")
-    }
-    
-    func generateHTML(for code: String) -> String {
-        return """
-        <html>
-        <head>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
-            <script>hljs.highlightAll();</script>
-        </head>
-        <body>
-            <pre><code class="language-swift">\(code)</code></pre>
-        </body>
-        </html>
-        """
     }
 }
