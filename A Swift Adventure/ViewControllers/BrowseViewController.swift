@@ -9,8 +9,13 @@ import UIKit
 
 class BrowseViewController: UITableViewController, CodeShowable {
     var codeKey: String { return "BrowseViewController" }
-    
+
     private let widgets = WidgetRegistry.allWidgets
+
+    enum Section: Int, CaseIterable {
+        case info
+        case widgets
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,21 +23,62 @@ class BrowseViewController: UITableViewController, CodeShowable {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return Section.allCases.count
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return widgets.count
+        switch Section(rawValue: section) {
+        case .info:
+            return 1
+        case .widgets:
+            return widgets.count
+        case .none:
+            return 0
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch Section(rawValue: section) {
+        case .info:
+            return "About Widget Demos"
+        case .widgets:
+            return "All Widgets"
+        case .none:
+            return nil
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let demo = widgets[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = demo.title
-        cell.accessoryType = .disclosureIndicator
+
+        switch Section(rawValue: indexPath.section) {
+        case .info:
+            cell.textLabel?.text = "How Widget Demos Work"
+            cell.accessoryType = .disclosureIndicator
+        case .widgets:
+            let demo = widgets[indexPath.row]
+            cell.textLabel?.text = demo.title
+            cell.accessoryType = .disclosureIndicator
+        case .none:
+            break
+        }
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let demo = widgets[indexPath.row]
-        let vc = WidgetShowcaseViewController(demo: demo)
-        navigationController?.pushViewController(vc, animated: true)
+        switch Section(rawValue: indexPath.section) {
+        case .info:
+            let vc = WidgetDemoDetailsViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .widgets:
+            let demo = widgets[indexPath.row]
+            let vc = WidgetShowcaseViewController(demo: demo)
+            navigationController?.pushViewController(vc, animated: true)
+        case .none:
+            break
+        }
     }
 }
+
