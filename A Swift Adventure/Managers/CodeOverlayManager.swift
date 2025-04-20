@@ -18,7 +18,7 @@ class CodeOverlayManager {
         btn.setTitle("Code", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .systemBlue
-        btn.layer.cornerRadius = 20
+        btn.layer.cornerRadius = 15
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 
@@ -26,10 +26,10 @@ class CodeOverlayManager {
         window.bringSubviewToFront(btn)
 
         NSLayoutConstraint.activate([
-            btn.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 10),
+            btn.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 0),
             btn.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -10),
             btn.widthAnchor.constraint(equalToConstant: 60),
-            btn.heightAnchor.constraint(equalToConstant: 40)
+            btn.heightAnchor.constraint(equalToConstant: 30)
         ])
 
         self.button = btn

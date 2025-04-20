@@ -7,10 +7,13 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    private let savedTabKey = "lastSelectedTab"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         
         let tab1 = UINavigationController(rootViewController: ViewController())
         let tab2 = UINavigationController(rootViewController: BrowseViewController())
@@ -21,6 +24,16 @@ class MainTabBarController: UITabBarController {
         tab3.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "doc.richtext.th"), tag: 2)
         
         viewControllers = [tab1, tab2, tab3]
+        
+        // Restore previously selected tab
+        let lastIndex = UserDefaults.standard.integer(forKey: savedTabKey)
+        selectedIndex = lastIndex
+    }
+    
+    // Save tab selection
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        UserDefaults.standard.set(selectedIndex, forKey: savedTabKey)
     }
 }
+
 

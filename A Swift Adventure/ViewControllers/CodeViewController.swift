@@ -161,6 +161,4 @@ class CodeViewController: UIViewController {
     }
 }
 
-protocol CodeShowable {
-    var codeKey: String { get }
-}
+
