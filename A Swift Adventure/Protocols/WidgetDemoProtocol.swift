@@ -11,6 +11,8 @@ import SwiftUI
 
 protocol WidgetDemo {
     var title: String { get }
+    var instructions: String {get}
     func makeUIKitView() -> UIView
     func makeSwiftUIView() -> AnyView
+    
 }
