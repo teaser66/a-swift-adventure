@@ -46,6 +46,24 @@ import SwiftUI
         fontLabel.text = "Font Style"
         fontLabel.font = UIFont.boldSystemFont(ofSize: 16)
         fontLabel.textAlignment = .center
+        
+        // Stack for Text Color Label and Segmented Control
+        let textColorStack = UIStackView(arrangedSubviews: [textColorLabel, textColorSegmentedControl])
+        textColorStack.axis = .horizontal
+        textColorStack.spacing = 8
+        textColorStack.alignment = .center
+
+        // Stack for Background Color Label and Segmented Control
+        let FontStyleStack = UIStackView(arrangedSubviews: [fontLabel, fontSegmentedControl])
+        FontStyleStack.axis = .horizontal
+        FontStyleStack.spacing = 8
+        FontStyleStack.alignment = .center
+        
+        // Divider Line
+        let divider = UIView()
+        divider.backgroundColor = .black
+        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        divider.widthAnchor.constraint(equalToConstant: 300).isActive = true
 
         plainTextLabel = UILabel()
         plainTextLabel.text = "Plain Text"
@@ -58,8 +76,9 @@ import SwiftUI
         styledTextLabel.text = "Styled Text"
         styledTextLabel.textAlignment = .center
         styledTextLabel.font = UIFont.systemFont(ofSize: 16)
+        styledTextLabel.textColor = .blue
 
-        [textColorLabel, textColorSegmentedControl, plainTextLabel, fontLabel, fontSegmentedControl, styledTextLabel].forEach {
+        [textColorStack,FontStyleStack, divider, plainTextLabel, styledTextLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             stack.addArrangedSubview($0)
         }
@@ -103,6 +122,7 @@ import SwiftUI
 
     func updateTextColors(textColor: UIColor) {
         plainTextLabel.textColor = textColor
+        styledTextLabel.textColor = textColor
     }
 
     func updateFontStyle(font: UIFont) {
@@ -118,39 +138,44 @@ struct TextDemoSwiftUIView: View {
     var body: some View {
         VStack(spacing: 16) {
             // Text Color Segment Control with Label
-            Text("Text Color")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .center)
-            Picker("Text Color", selection: $selectedTextColor) {
-                Text("Blue").tag(Color.blue)
-                Text("Black").tag(Color.black)
-                Text("Green").tag(Color.green)
+            HStack {
+                Text("Text Color")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                Picker("Text Color", selection: $selectedTextColor) {
+                    Text("Blue").tag(Color.blue)
+                    Text("Black").tag(Color.black)
+                    Text("Green").tag(Color.green)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 250) // Matching width of UIKit segments
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 250) // Matching width of UIKit segments
-            .padding(.horizontal, 32)
 
+            HStack {
+                // Font Style Segment Control with Label
+                Text("Font Style")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                Picker("Font Style", selection: $selectedFont) {
+                    Text("System").tag(Font.body)
+                    Text("Bold").tag(Font.title)
+                    Text("Italic").tag(Font.body.italic())
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 250) // Matching width of UIKit segments
+            }
+            
+            Divider()
+            
             // Plain Text Label with Text Color Binding
             Text("Plain Text")
                 .font(.body)
                 .foregroundColor(selectedTextColor) // Text color binding
 
-            // Font Style Segment Control with Label
-            Text("Font Style")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .center)
-            Picker("Font Style", selection: $selectedFont) {
-                Text("System").tag(Font.body)
-                Text("Bold").tag(Font.title)
-                Text("Italic").tag(Font.body.italic())
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 250) // Matching width of UIKit segments
-            .padding(.horizontal, 32)
-
             // Styled Text Label with Font and Text Color Binding
             Text("Styled Text")
                 .font(selectedFont)
+                .foregroundColor(selectedTextColor) // Text color binding
 
             Spacer()
         }

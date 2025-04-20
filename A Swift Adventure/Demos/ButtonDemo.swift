@@ -13,6 +13,7 @@ import SwiftUI
 
     private var plainButton: UIButton!
     private var coloredButton: UIButton!
+    private var multilineButton: UIButton!
 
     func makeUIKitView() -> UIView {
         let container = UIView()
@@ -22,11 +23,11 @@ import SwiftUI
         stack.alignment = .center
         stack.translatesAutoresizingMaskIntoConstraints = false
 
-        let textColorSegmentedControl = UISegmentedControl(items: ["Blue", "Black", "Green"])
+        let textColorSegmentedControl = UISegmentedControl(items: ["Black", "Yellow", "Cyan"])
         textColorSegmentedControl.selectedSegmentIndex = 0
         textColorSegmentedControl.addTarget(self, action: #selector(textColorChanged(_:)), for: .valueChanged)
 
-        let backgroundColorSegmentedControl = UISegmentedControl(items: ["Blue", "Red", "Purple"])
+        let backgroundColorSegmentedControl = UISegmentedControl(items: ["Gray", "Indigo", "Orange"])
         backgroundColorSegmentedControl.selectedSegmentIndex = 0
         backgroundColorSegmentedControl.addTarget(self, action: #selector(backgroundColorChanged(_:)), for: .valueChanged)
 
@@ -42,6 +43,7 @@ import SwiftUI
 
         plainButton = UIButton(type: .system)
         plainButton.setTitle("Plain Button", for: .normal)
+        plainButton.setTitleColor(.black, for: .normal)
         plainButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
         plainButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         plainButton.addAction(UIAction { _ in
@@ -52,24 +54,44 @@ import SwiftUI
         coloredButton.setTitle("Colored Button", for: .normal)
         coloredButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
         coloredButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        coloredButton.backgroundColor = .systemBlue
-        coloredButton.setTitleColor(.white, for: .normal)
+        coloredButton.backgroundColor = .darkGray
+        coloredButton.setTitleColor(.black, for: .normal)
         coloredButton.layer.cornerRadius = 8
         coloredButton.addAction(UIAction { _ in
             self.showAlert(title: "I am a colored button")
         }, for: .touchUpInside)
 
-        let multiline = UIButton(type: .system)
-        multiline.setTitle("Multiline\nButton", for: .normal)
-        multiline.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        multiline.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        multiline.titleLabel?.numberOfLines = 2
-        multiline.titleLabel?.textAlignment = .center
-        multiline.addAction(UIAction { _ in
+        multilineButton = UIButton(type: .system)
+        multilineButton.setTitle("Multiline\nButton", for: .normal)
+        multilineButton.setTitleColor(.black, for: .normal)
+        multilineButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        multilineButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        multilineButton.titleLabel?.numberOfLines = 2
+        multilineButton.titleLabel?.textAlignment = .center
+        multilineButton.addAction(UIAction { _ in
             self.showAlert(title: "I am a multiline button")
         }, for: .touchUpInside)
 
-        [textColorLabel, textColorSegmentedControl, plainButton, backgroundColorLabel, backgroundColorSegmentedControl, coloredButton, multiline].forEach {
+        // Stack for Text Color Label and Segmented Control
+        let textColorStack = UIStackView(arrangedSubviews: [textColorLabel, textColorSegmentedControl])
+        textColorStack.axis = .horizontal
+        textColorStack.spacing = 8
+        textColorStack.alignment = .center
+
+        // Stack for Background Color Label and Segmented Control
+        let backgroundColorStack = UIStackView(arrangedSubviews: [backgroundColorLabel, backgroundColorSegmentedControl])
+        backgroundColorStack.axis = .horizontal
+        backgroundColorStack.spacing = 8
+        backgroundColorStack.alignment = .center
+
+        // Divider Line
+        let divider = UIView()
+        divider.backgroundColor = .black
+        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        divider.widthAnchor.constraint(equalToConstant: 300).isActive = true
+
+        // Add everything to the main stack
+        [textColorStack, backgroundColorStack, divider, plainButton, coloredButton, multilineButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             stack.addArrangedSubview($0)
         }
@@ -83,6 +105,7 @@ import SwiftUI
 
         return container
     }
+
 
     func makeSwiftUIView() -> AnyView {
         AnyView(ButtonDemoSwiftUIView())
@@ -98,10 +121,10 @@ import SwiftUI
     @objc func textColorChanged(_ sender: UISegmentedControl) {
         let selectedColor: UIColor
         switch sender.selectedSegmentIndex {
-        case 0: selectedColor = .blue
-        case 1: selectedColor = .black
-        case 2: selectedColor = .green
-        default: selectedColor = .blue
+        case 0: selectedColor = .black
+        case 1: selectedColor = .systemYellow
+        case 2: selectedColor = .cyan
+        default: selectedColor = .black
         }
         updateButtonColors(textColor: selectedColor)
     }
@@ -109,16 +132,18 @@ import SwiftUI
     @objc func backgroundColorChanged(_ sender: UISegmentedControl) {
         let selectedColor: UIColor
         switch sender.selectedSegmentIndex {
-        case 0: selectedColor = .blue
-        case 1: selectedColor = .red
-        case 2: selectedColor = .purple
-        default: selectedColor = .blue
+        case 0: selectedColor = .darkGray
+        case 1: selectedColor = .systemIndigo
+        case 2: selectedColor = .orange
+        default: selectedColor = .darkGray
         }
         updateButtonBackgroundColor(backgroundColor: selectedColor)
     }
 
     func updateButtonColors(textColor: UIColor) {
         plainButton.setTitleColor(textColor, for: .normal)
+        coloredButton.setTitleColor(textColor, for: .normal)
+        multilineButton.setTitleColor(textColor, for: .normal)
     }
 
     func updateButtonBackgroundColor(backgroundColor: UIColor) {
@@ -132,60 +157,67 @@ struct ButtonDemoSwiftUIView: View {
     @State private var selectedBackgroundColor: Color = .blue // State for Background Color
     
     var body: some View {
+        
         VStack(spacing: 16) {
-            // Text Color Segment Control with Label
-            Text("Text Color")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .center)
-            Picker("Text Color", selection: $selectedTextColor) {
-                Text("Blue").tag(Color.blue)
-                Text("Black").tag(Color.black)
-                Text("Green").tag(Color.green)
+            // Text Color Segment Control with Label (Inline)
+            HStack {
+                Text("Text Color")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Picker("Text Color", selection: $selectedTextColor) {
+                    Text("Black").tag(Color.black)
+                    Text("Yellow").tag(Color.yellow)
+                    Text("Cyan").tag(Color.cyan)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 250)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 250) // Matching width of UIKit segments
-            .padding(.horizontal, 32)
+            
+            // Background Color Segment Control with Label (Inline)
+            HStack {
+                Text("Background Color")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Picker("Background Color", selection: $selectedBackgroundColor) {
+                    Text("Gray").tag(Color.gray)
+                    Text("Indigo").tag(Color.purple)
+                    Text("Orange").tag(Color.orange)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 250)
+            }
+
+            // Divider Line
+            Divider().frame(height: 1).background(Color.black)
 
             // Plain Button with Text Color Binding
             Button("Plain Button") {
                 alertMessage = "I am a plain button"
             }
             .padding()
-            .frame(width: 150, height: 44)  // Exact button size as UIKit
-            .foregroundColor(selectedTextColor) // Text color binding
-            .background(Color.clear) // No background color
-            .cornerRadius(0) // No rounded corners, flat style
+            .frame(width: 150, height: 44)
+            .foregroundColor(selectedTextColor)
+            .background(Color.clear)
+            .cornerRadius(0)
 
-            // Background Color Segment Control with Label
-            Text("Background Color")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .center)
-            Picker("Background Color", selection: $selectedBackgroundColor) {
-                Text("Blue").tag(Color.blue)
-                Text("Red").tag(Color.red)
-                Text("Purple").tag(Color.purple)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 250) // Matching width of UIKit segments
-            .padding(.horizontal, 32)
-
-            // Colored Button with Background Color Binding
+            // Colored Button with Background and Text Color Binding
             Button("Colored Button") {
                 alertMessage = "I am a colored button"
             }
             .padding()
-            .frame(width: 150, height: 44)  // Exact button size as UIKit
-            .background(selectedBackgroundColor) // Background color binding
-            .foregroundColor(.white)  // Text color white for visibility
-            .cornerRadius(8)  // Rounded corners for colored button
+            .frame(width: 150, height: 44)
+            .background(selectedBackgroundColor)
+            .foregroundColor(selectedTextColor)
+            .cornerRadius(8)
 
-            // Multiline Button
+            // Multiline Button with Text Color Binding
             Button("Multiline\nButton") {
                 alertMessage = "I am a multiline button"
             }
-            .frame(width: 150, height: 44) // Exact button size as UIKit
+            .frame(width: 150, height: 44)
             .multilineTextAlignment(.center)
             .padding()
+            .foregroundColor(selectedTextColor)
 
             Spacer()
         }
