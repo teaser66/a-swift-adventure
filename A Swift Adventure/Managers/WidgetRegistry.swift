@@ -7,8 +7,8 @@
 
 struct WidgetRegistry {
     static let allWidgets: [WidgetDemo] = [
-        ButtonDemo(),
-        TextDemo()
+        TextDemo(),
+        ButtonDemo()
     ]
 }
 

@@ -8,7 +8,8 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CodeShowable {
+    var codeKey: String { return "ViewController" }
 
     override func viewDidLoad() {
         super.viewDidLoad()

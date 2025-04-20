@@ -10,7 +10,7 @@ import UIKit
 class BrowseViewController: UITableViewController, CodeShowable {
     var codeKey: String { return "BrowseViewController" }
 
-    private let widgets = WidgetRegistry.allWidgets
+    private let widgets = WidgetRegistry.allWidgets.sorted { $0.title < $1.title }
 
     enum Section: Int, CaseIterable {
         case info
