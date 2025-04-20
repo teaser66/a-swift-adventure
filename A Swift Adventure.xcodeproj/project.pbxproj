@@ -163,8 +163,8 @@
 			children = (
 				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
 				524504F52DB2E91B008A8765 /* ViewController.swift */,
-				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
 				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
+				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
 				524505262DB2EC6E008A8765 /* CodeViewController.swift */,
 				524505412DB5327F008A8765 /* WidgetShowcaseViewController.swift */,
 				524505432DB53794008A8765 /* WidgetDemoDetailsViewController.swift */,
