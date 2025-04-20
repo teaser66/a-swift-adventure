@@ -29,6 +29,7 @@
 		524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505412DB5327F008A8765 /* WidgetShowcaseViewController.swift */; };
 		524505442DB53794008A8765 /* WidgetDemoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505432DB53794008A8765 /* WidgetDemoDetailsViewController.swift */; };
 		524505462DB53891008A8765 /* WidgetDemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505452DB53891008A8765 /* WidgetDemoProtocol.swift */; };
+		5245054A2DB561B6008A8765 /* TextDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505492DB561B6008A8765 /* TextDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		524505412DB5327F008A8765 /* WidgetShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetShowcaseViewController.swift; sourceTree = "<group>"; };
 		524505432DB53794008A8765 /* WidgetDemoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDemoDetailsViewController.swift; sourceTree = "<group>"; };
 		524505452DB53891008A8765 /* WidgetDemoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDemoProtocol.swift; sourceTree = "<group>"; };
+		524505492DB561B6008A8765 /* TextDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				5245053F2DB5321F008A8765 /* ButtonDemo.swift */,
+				524505492DB561B6008A8765 /* TextDemo.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
 				524504F62DB2E91B008A8765 /* ViewController.swift in Sources */,
 				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
+				5245054A2DB561B6008A8765 /* TextDemo.swift in Sources */,
 				524505442DB53794008A8765 /* WidgetDemoDetailsViewController.swift in Sources */,
 				5245053D2DB531F9008A8765 /* WidgetRegistry.swift in Sources */,
 				524504F22DB2E91B008A8765 /* AppDelegate.swift in Sources */,

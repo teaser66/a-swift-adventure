@@ -23,3 +23,8 @@ extension UIApplication {
         return base
     }
 }
+
+
+extension String: Identifiable {
+    public var id: String { self }
+}

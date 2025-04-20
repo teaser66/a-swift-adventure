@@ -195,8 +195,3 @@ struct ButtonDemoSwiftUIView: View {
         }
     }
 }
-
-
-extension String: Identifiable {
-    public var id: String { self }
-}
