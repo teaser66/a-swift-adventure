@@ -32,6 +32,7 @@
 		5245054A2DB561B6008A8765 /* TextDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505492DB561B6008A8765 /* TextDemo.swift */; };
 		5245054C2DB57051008A8765 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245054B2DB57051008A8765 /* AuthorViewController.swift */; };
 		5245054E2DB573E3008A8765 /* author.html in Resources */ = {isa = PBXBuildFile; fileRef = 5245054D2DB573E3008A8765 /* author.html */; };
+		524505502DB57771008A8765 /* VentureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245054F2DB57771008A8765 /* VentureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		524505492DB561B6008A8765 /* TextDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDemo.swift; sourceTree = "<group>"; };
 		5245054B2DB57051008A8765 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		5245054D2DB573E3008A8765 /* author.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = author.html; sourceTree = "<group>"; };
+		5245054F2DB57771008A8765 /* VentureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
 				524504F52DB2E91B008A8765 /* ViewController.swift */,
+				5245054F2DB57771008A8765 /* VentureViewController.swift */,
 				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
 				5245054B2DB57051008A8765 /* AuthorViewController.swift */,
 				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
@@ -373,6 +376,7 @@
 				524504F22DB2E91B008A8765 /* AppDelegate.swift in Sources */,
 				524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */,
 				524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */,
+				524505502DB57771008A8765 /* VentureViewController.swift in Sources */,
 				524505332DB30699008A8765 /* Extensions.swift in Sources */,
 				5245054C2DB57051008A8765 /* AuthorViewController.swift in Sources */,
 				524504F42DB2E91B008A8765 /* SceneDelegate.swift in Sources */,
