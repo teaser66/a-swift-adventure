@@ -8,7 +8,7 @@
 import SwiftUI
 
 @objc class ButtonDemo: NSObject, WidgetDemo {
-    var title: String { "Button" }
+    var title: String { "ButtonDemo" }
     var instructions: String { "Use the segments for dynamic changes" }
 
     private var plainButton: UIButton!

@@ -65,6 +65,7 @@ class WidgetShowcaseViewController: UIViewController, CodeShowable {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = demo.title
+        title = title?.replacingOccurrences(of: "demo", with: "", options: .caseInsensitive)
 
         segment.translatesAutoresizingMaskIntoConstraints = false
         codeButton.translatesAutoresizingMaskIntoConstraints = false

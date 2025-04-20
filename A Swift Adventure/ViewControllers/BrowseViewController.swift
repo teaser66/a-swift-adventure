@@ -58,7 +58,9 @@ class BrowseViewController: UITableViewController, CodeShowable {
             cell.accessoryType = .disclosureIndicator
         case .widgets:
             let demo = widgets[indexPath.row]
-            cell.textLabel?.text = demo.title
+            var title = demo.title
+            title = title.replacingOccurrences(of: "demo", with: "", options: .caseInsensitive)
+            cell.textLabel?.text = title
             cell.accessoryType = .disclosureIndicator
         case .none:
             break

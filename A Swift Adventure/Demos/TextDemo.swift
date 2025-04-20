@@ -15,7 +15,7 @@
 import SwiftUI
 
 @objc class TextDemo: NSObject, WidgetDemo {
-    var title: String { "Text" }
+    var title: String { "TextDemo" }
     var instructions: String { "Use the segments for dynamic changes" }
 
     private var plainTextLabel: UILabel!
