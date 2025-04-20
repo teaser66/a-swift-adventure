@@ -9,6 +9,8 @@ import UIKit
 
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CodeShowable {
     var codeKey: String { return "AboutViewController" }
+    
+    let sectionTitles = ["About", "GitHub", "All Files"]
 
     let tableView = UITableView(frame: .zero, style: .grouped)
     var codeFileKeys: [String] = []
@@ -53,15 +55,15 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return sectionTitles.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : codeFileKeys.count
+        return section == 2 ? codeFileKeys.count : 1
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "About" : "All Files"
+        return sectionTitles[section]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,7 +72,9 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 0 {
             cell.textLabel?.text = "About the author"
             cell.accessoryType = .disclosureIndicator
-        } else {
+        }  else if indexPath.section == 1{
+            cell.textLabel?.text = "View The Project On GitHub"
+        }else if indexPath.section == 2{
             cell.textLabel?.text = codeFileKeys[indexPath.row]
         }
 
@@ -85,6 +89,12 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 0 {
             let aboutVC = AuthorViewController()
             navigationController?.pushViewController(aboutVC, animated: true)
+        } else if indexPath.section == 1 {
+            if let url = URL(string: "https://github.com/teaser66/a-swift-adventure") {
+                UIApplication.shared.open(url)
+            } else {
+                print("Invalid URL")
+            }
         } else {
             let key = codeFileKeys[indexPath.row]
 
