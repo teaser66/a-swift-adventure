@@ -1,0 +1,139 @@
+
+// MARK: - SliderDemo.swift
+import UIKit
+import SwiftUI
+
+struct SliderDemo: WidgetDemo {
+    var title: String { "Slider Demo" }
+    var instructions: String { "Use the slider to select a value between 0 and 100." }
+
+    func makeUIKitView() -> UIView {
+        let slider = UISlider()
+        slider.minimumValue = 0
+        slider.maximumValue = 100
+        slider.value = 50
+        return slider
+    }
+
+    func makeSwiftUIView() -> AnyView {
+        @State var value: Double = 50
+        return AnyView(
+            VStack {
+                Slider(value: $value, in: 0...100)
+                Text("Value: \(Int(value))")
+            }
+            .padding()
+        )
+    }
+}
+
+
+// MARK: - StepperDemo.swift
+struct StepperDemo: WidgetDemo {
+    var title: String { "Stepper Demo" }
+    var instructions: String { "Use the stepper to increment or decrement the value." }
+
+    func makeUIKitView() -> UIView {
+        let stepper = UIStepper()
+        stepper.minimumValue = 0
+        stepper.maximumValue = 10
+        stepper.value = 5
+        return stepper
+    }
+
+    func makeSwiftUIView() -> AnyView {
+        @State var count = 5
+        return AnyView(
+            VStack {
+                Stepper("Count: \(count)", value: $count, in: 0...10)
+            }
+            .padding()
+        )
+    }
+}
+
+
+// MARK: - ToggleDemo.swift
+struct ToggleDemo: WidgetDemo {
+    var title: String { "Toggle Demo" }
+    var instructions: String { "Tap the switch to turn on or off." }
+
+    func makeUIKitView() -> UIView {
+        let toggle = UISwitch()
+        toggle.isOn = true
+        return toggle
+    }
+
+    func makeSwiftUIView() -> AnyView {
+        @State var isOn = true
+        return AnyView(
+            VStack {
+                Toggle("Enabled", isOn: $isOn)
+            }
+            .padding()
+        )
+    }
+}
+
+
+// MARK: - SegmentedControlDemo.swift
+struct SegmentedControlDemo: WidgetDemo {
+    var title: String { "Segmented Control Demo" }
+    var instructions: String { "Tap a segment to select an option." }
+
+    func makeUIKitView() -> UIView {
+        let control = UISegmentedControl(items: ["One", "Two", "Three"])
+        control.selectedSegmentIndex = 0
+        return control
+    }
+
+    func makeSwiftUIView() -> AnyView {
+        @State var selection = 0
+        return AnyView(
+            Picker("Options", selection: $selection) {
+                Text("One").tag(0)
+                Text("Two").tag(1)
+                Text("Three").tag(2)
+            }
+            .pickerStyle(.segmented)
+            .padding()
+        )
+    }
+}
+
+
+// MARK: - ProgressViewDemo.swift
+struct ProgressViewDemo: WidgetDemo {
+    var title: String { "Progress View Demo" }
+    var instructions: String { "Shows an indeterminate or determinate progress view." }
+
+    func makeUIKitView() -> UIView {
+        let progress = UIProgressView(progressViewStyle: .default)
+        progress.progress = 0.6
+        return progress
+    }
+
+    func makeSwiftUIView() -> AnyView {
+        return AnyView(
+            VStack(spacing: 16) {
+                ProgressView("Loading", value: 0.6)
+                ProgressView()
+            }
+            .padding()
+        )
+    }
+}
+
+
+// MARK: - Updated Registry
+struct WidgetRegistry {
+    static let allWidgets: [WidgetDemo] = [
+        TextDemo(),
+        ButtonDemo(),
+        SliderDemo(),
+        StepperDemo(),
+        ToggleDemo(),
+        SegmentedControlDemo(),
+        ProgressViewDemo()
+    ]
+}

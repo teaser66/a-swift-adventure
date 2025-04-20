@@ -83,7 +83,7 @@ class WidgetShowcaseViewController: UIViewController, CodeShowable {
         codeButton.setTitle("Code For This \(demo.title) Widget", for: .normal)
         codeButton.addTarget(self, action: #selector(showWidgetCode), for: .touchUpInside)
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareContent))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareContent))
 
         view.addSubview(segment)
         view.addSubview(codeButton)

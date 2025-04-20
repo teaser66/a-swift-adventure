@@ -59,7 +59,18 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 2 ? codeFileKeys.count : 1
+        
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 3
+        case 2:
+            return codeFileKeys.count
+        default:
+            return 0
+        }
+
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -73,7 +84,16 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.textLabel?.text = "About the author"
             cell.accessoryType = .disclosureIndicator
         }  else if indexPath.section == 1{
-            cell.textLabel?.text = "View The Project On GitHub"
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "View The Project On GitHub"
+            case 1:
+                cell.textLabel?.text = "Copy the Github Link"
+            case 2:
+                cell.textLabel?.text = "Share the Github Link"
+            default:
+                cell.textLabel?.text = ""
+            }
         }else if indexPath.section == 2{
             cell.textLabel?.text = codeFileKeys[indexPath.row]
         }
@@ -90,10 +110,34 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let aboutVC = AuthorViewController()
             navigationController?.pushViewController(aboutVC, animated: true)
         } else if indexPath.section == 1 {
-            if let url = URL(string: "https://github.com/teaser66/a-swift-adventure") {
-                UIApplication.shared.open(url)
-            } else {
-                print("Invalid URL")
+            switch indexPath.row {
+            case 0:
+                if let url = URL(string: "https://github.com/teaser66/a-swift-adventure") {
+                    UIApplication.shared.open(url)
+                } else {
+                    print("Invalid URL")
+                }
+            case 1:
+                let text = "https://github.com/teaser66/a-swift-adventure"
+                UIPasteboard.general.string = text
+
+                    let alert = UIAlertController(title: "Copied!", message: "\"\(text)\" has been copied to the clipboard.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(alert, animated: true)
+            case 2:
+                guard let url = URL(string: "https://github.com/teaser66/a-swift-adventure") else { return }
+                    let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+
+                    // iPad support (avoids crashes on iPad)
+                    if let popover = activityVC.popoverPresentationController {
+                        popover.sourceView = self.view
+                        popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                        popover.permittedArrowDirections = []
+                    }
+
+                    present(activityVC, animated: true)
+            default:
+                print("nothing")
             }
         } else {
             let key = codeFileKeys[indexPath.row]

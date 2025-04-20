@@ -33,6 +33,7 @@
 		5245054C2DB57051008A8765 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245054B2DB57051008A8765 /* AuthorViewController.swift */; };
 		5245054E2DB573E3008A8765 /* author.html in Resources */ = {isa = PBXBuildFile; fileRef = 5245054D2DB573E3008A8765 /* author.html */; };
 		524505502DB57771008A8765 /* VentureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245054F2DB57771008A8765 /* VentureViewController.swift */; };
+		524505522DB57FC5008A8765 /* Placeholder.txt in Resources */ = {isa = PBXBuildFile; fileRef = 524505512DB57FC5008A8765 /* Placeholder.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		5245054B2DB57051008A8765 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		5245054D2DB573E3008A8765 /* author.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = author.html; sourceTree = "<group>"; };
 		5245054F2DB57771008A8765 /* VentureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureViewController.swift; sourceTree = "<group>"; };
+		524505512DB57FC5008A8765 /* Placeholder.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Placeholder.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				524504FF2DB2E91F008A8765 /* LaunchScreen.storyboard */,
 				524505022DB2E91F008A8765 /* Info.plist */,
 				524504FA2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld */,
+				524505512DB57FC5008A8765 /* Placeholder.txt */,
 			);
 			path = "A Swift Adventure";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				524505012DB2E91F008A8765 /* Base in Resources */,
 				524504F92DB2E91C008A8765 /* Base in Resources */,
 				524505292DB2EF1D008A8765 /* CodeFiles.json in Resources */,
+				524505522DB57FC5008A8765 /* Placeholder.txt in Resources */,
 				5245054E2DB573E3008A8765 /* author.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
