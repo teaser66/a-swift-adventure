@@ -21,7 +21,6 @@ struct VentureChoice: Codable {
 enum ModalType: String, Codable {
     case playMusic
     case callAPI
-    case miniGame
     case none
 }
 

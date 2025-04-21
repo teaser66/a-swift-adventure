@@ -22,6 +22,10 @@ class CodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Load JSON
+        loadURLsFromJSON()
+        
         view.backgroundColor = .white
         
         originalFileKey = fileKey // Store the original key
