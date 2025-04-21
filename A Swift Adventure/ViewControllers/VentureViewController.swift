@@ -1,5 +1,6 @@
 import UIKit
 import SwiftUI
+import WebKit
 
 class VentureViewController: UIViewController, CodeShowable {
     var codeKey: String { return "VentureViewController" }
@@ -78,37 +79,80 @@ struct VentureView: View {
 struct ModalExperienceView: View {
     let modalType: ModalType
     var dismissAction: () -> Void
+    @State private var isShowingCode = false
+    var codeURLs: [String: String] = [:]
 
     var body: some View {
         VStack {
+            // Button to toggle code view inside the modal
+            Button(action: toggleCodeView) {
+                Text(isShowingCode ? "Continue" : "Code")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding(.top, 50)
+
+            // Display code view (WebView) or modal content based on isShowingCode
+           if isShowingCode {
+               let key = modalType.rawValue
+               if let urlString = codeURLs[key], let url = URL(string: urlString){
+                   WebView(url: url) // Display the WebView
+                       .frame(maxWidth: .infinity, maxHeight: .infinity)
+               } else {
+                   Text("Invalid code URL")
+                       .padding()
+                       .foregroundColor(.red)
+               }
+           } else {
+               // Content based on modalType
+               switch modalType {
+               case .playMusic:
+                   PlayMusicView()
+               case .callAPI:
+                   APICallView()
+               case .miniGame:
+                   MiniGameView()
+               case .none:
+                   EmptyView()
+               }
+           }
+
+            // Close button
             Button(action: {
                 dismissAction()
             }) {
                 Text("Close")
                     .font(.headline)
-                    .foregroundColor(.white) // Text color
+                    .foregroundColor(.white)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
-                    .background(Color.blue)  // Solid blue background
+                    .background(Color.blue)
                     .cornerRadius(10)
-                    .frame(maxWidth: .infinity)  // Make sure it takes up full width
+                    .frame(maxWidth: .infinity)
             }
-            .padding(.top, 50)  // Adjust padding as needed
-            
-            switch modalType {
-            case .playMusic:
-                PlayMusicView()
-            case .callAPI:
-                APICallView()
-            case .miniGame:
-                MiniGameView()
-            case .none:
-                EmptyView()
-            }
+            .padding(.top, 30) // Adjust as needed
         }
         .padding()
     }
+
+    // Function to toggle the code view
+    private func toggleCodeView() {
+        isShowingCode.toggle()
+
+        if isShowingCode {
+            // Here you can implement the logic to display the code content
+            print("Show code content or load WebView")
+        } else {
+            // Hide code and return to the modal content
+            print("Hide code content")
+        }
+    }
 }
+
 
 // Extend ModalType to work with .sheet
 extension ModalType: Identifiable {
@@ -133,21 +177,7 @@ class VentureEngineWrapper: ObservableObject {
 
 // MARK: - Placeholder Modal Views
 
-struct PlayMusicView: View {
-    var body: some View {
-        Text("🎵 Now playing music...")
-            .font(.title)
-            .padding()
-    }
-}
 
-struct APICallView: View {
-    var body: some View {
-        Text("🌐 API call initiated...")
-            .font(.title)
-            .padding()
-    }
-}
 
 struct MiniGameView: View {
     var body: some View {
@@ -156,3 +186,19 @@ struct MiniGameView: View {
             .padding()
     }
 }
+
+struct WebView: UIViewRepresentable {
+    var url: URL?
+
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        if let url = url {
+            let request = URLRequest(url: url)
+            uiView.load(request)
+        }
+    }
+}
+

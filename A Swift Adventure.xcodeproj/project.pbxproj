@@ -37,6 +37,8 @@
 		524505552DB58C63008A8765 /* VentureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505542DB58C63008A8765 /* VentureEngine.swift */; };
 		524505582DB58C7F008A8765 /* VentureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505572DB58C7F008A8765 /* VentureNode.swift */; };
 		5245055C2DB58C9F008A8765 /* nodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5245055B2DB58C9F008A8765 /* nodes.json */; };
+		524505632DB68E88008A8765 /* PlayMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505622DB68E88008A8765 /* PlayMusicView.swift */; };
+		524505652DB68E92008A8765 /* CallAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505642DB68E92008A8765 /* CallAPIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		524505542DB58C63008A8765 /* VentureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureEngine.swift; sourceTree = "<group>"; };
 		524505572DB58C7F008A8765 /* VentureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureNode.swift; sourceTree = "<group>"; };
 		5245055B2DB58C9F008A8765 /* nodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nodes.json; sourceTree = "<group>"; };
+		524505622DB68E88008A8765 /* PlayMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusicView.swift; sourceTree = "<group>"; };
+		524505642DB68E92008A8765 /* CallAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			children = (
 				524505352DB307E0008A8765 /* Delegates */,
 				524505342DB3074D008A8765 /* ViewControllers */,
+				524505612DB68E6F008A8765 /* GameViews */,
 				524505372DB307F4008A8765 /* Managers */,
 				524505562DB58C75008A8765 /* Models */,
 				5245053B2DB531BE008A8765 /* Protocols */,
@@ -260,6 +265,15 @@
 				524505572DB58C7F008A8765 /* VentureNode.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		524505612DB68E6F008A8765 /* GameViews */ = {
+			isa = PBXGroup;
+			children = (
+				524505622DB68E88008A8765 /* PlayMusicView.swift */,
+				524505642DB68E92008A8765 /* CallAPIView.swift */,
+			);
+			path = GameViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +420,7 @@
 				5245053D2DB531F9008A8765 /* WidgetRegistry.swift in Sources */,
 				524504F22DB2E91B008A8765 /* AppDelegate.swift in Sources */,
 				524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */,
+				524505652DB68E92008A8765 /* CallAPIView.swift in Sources */,
 				524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */,
 				524505502DB57771008A8765 /* VentureViewController.swift in Sources */,
 				524505582DB58C7F008A8765 /* VentureNode.swift in Sources */,
@@ -415,6 +430,7 @@
 				524505312DB3066B008A8765 /* CodeOverlayManager.swift in Sources */,
 				5245052F2DB2F6BA008A8765 /* AboutViewController.swift in Sources */,
 				5245052D2DB2F6B1008A8765 /* BrowseViewController.swift in Sources */,
+				524505632DB68E88008A8765 /* PlayMusicView.swift in Sources */,
 				524505462DB53891008A8765 /* WidgetDemoProtocol.swift in Sources */,
 				524505402DB5321F008A8765 /* ButtonDemo.swift in Sources */,
 			);
