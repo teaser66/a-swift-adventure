@@ -19,8 +19,30 @@ struct VentureChoice: Codable {
 }
 
 enum ModalType: String, Codable {
+    case takePicture
+    case getCameraRoll
+    case saveToPhotos
+    case editImage
+    case recordVideo
+    case recordAudio
     case playMusic
-    case callAPI
+    case getAPI
+    case postAPI
+    case cacheImage
+    case parseJSON
+    case combineURLSession
+    case coreData
+    case userDefaults
+    case fileManager
+    case keychain
+    case formFun
+    case themes
+    case animations
+    case getLocation
+    case mapkit
+    case localNotifications
+    case haptic
+    case arKit
     case none
 }
 

@@ -41,6 +41,28 @@
 		524505652DB68E92008A8765 /* CallAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505642DB68E92008A8765 /* CallAPIView.swift */; };
 		524505672DB6A6A5008A8765 /* AboutGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505662DB6A6A5008A8765 /* AboutGameView.swift */; };
 		5245056A2DB6A8A7008A8765 /* SwiftUICodeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505692DB6A8A7008A8765 /* SwiftUICodeWrapper.swift */; };
+		5245056C2DB6AD78008A8765 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245056B2DB6AD78008A8765 /* ARView.swift */; };
+		5245056E2DB6ADA1008A8765 /* TakePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245056D2DB6ADA1008A8765 /* TakePictureView.swift */; };
+		524505702DB6ADC6008A8765 /* CameraRollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245056F2DB6ADC6008A8765 /* CameraRollView.swift */; };
+		524505722DB6ADD3008A8765 /* SavePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505712DB6ADD3008A8765 /* SavePhotoView.swift */; };
+		524505742DB6ADE0008A8765 /* EditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505732DB6ADE0008A8765 /* EditImageView.swift */; };
+		524505762DB6ADFC008A8765 /* HapticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505752DB6ADFC008A8765 /* HapticView.swift */; };
+		524505782DB6AE0F008A8765 /* RecordVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505772DB6AE0F008A8765 /* RecordVideoView.swift */; };
+		5245057A2DB6AE22008A8765 /* RecordAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505792DB6AE22008A8765 /* RecordAudioView.swift */; };
+		5245057C2DB6AE3F008A8765 /* PostAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245057B2DB6AE3F008A8765 /* PostAPIView.swift */; };
+		5245057E2DB6AE52008A8765 /* CacheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245057D2DB6AE52008A8765 /* CacheImageView.swift */; };
+		524505802DB6AE66008A8765 /* ParseJSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245057F2DB6AE66008A8765 /* ParseJSONView.swift */; };
+		524505822DB6AE75008A8765 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505812DB6AE75008A8765 /* CombineView.swift */; };
+		524505842DB6AE86008A8765 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505832DB6AE86008A8765 /* CoreDataView.swift */; };
+		524505862DB6AE95008A8765 /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505852DB6AE95008A8765 /* UserDefaultsView.swift */; };
+		524505882DB6AEA3008A8765 /* FileManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505872DB6AEA3008A8765 /* FileManagerView.swift */; };
+		5245058A2DB6AEB2008A8765 /* KeyChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505892DB6AEB2008A8765 /* KeyChainView.swift */; };
+		5245058C2DB6AECE008A8765 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245058B2DB6AECD008A8765 /* FormView.swift */; };
+		5245058E2DB6AEDC008A8765 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245058D2DB6AEDC008A8765 /* ThemesView.swift */; };
+		524505902DB6AEE7008A8765 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245058F2DB6AEE7008A8765 /* AnimationsView.swift */; };
+		524505922DB6AEF1008A8765 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505912DB6AEF1008A8765 /* LocationsView.swift */; };
+		524505942DB6AF03008A8765 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505932DB6AF03008A8765 /* MapView.swift */; };
+		524505962DB6AF0F008A8765 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505952DB6AF0F008A8765 /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +121,28 @@
 		524505642DB68E92008A8765 /* CallAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPIView.swift; sourceTree = "<group>"; };
 		524505662DB6A6A5008A8765 /* AboutGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGameView.swift; sourceTree = "<group>"; };
 		524505692DB6A8A7008A8765 /* SwiftUICodeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICodeWrapper.swift; sourceTree = "<group>"; };
+		5245056B2DB6AD78008A8765 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		5245056D2DB6ADA1008A8765 /* TakePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureView.swift; sourceTree = "<group>"; };
+		5245056F2DB6ADC6008A8765 /* CameraRollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollView.swift; sourceTree = "<group>"; };
+		524505712DB6ADD3008A8765 /* SavePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePhotoView.swift; sourceTree = "<group>"; };
+		524505732DB6ADE0008A8765 /* EditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageView.swift; sourceTree = "<group>"; };
+		524505752DB6ADFC008A8765 /* HapticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticView.swift; sourceTree = "<group>"; };
+		524505772DB6AE0F008A8765 /* RecordVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVideoView.swift; sourceTree = "<group>"; };
+		524505792DB6AE22008A8765 /* RecordAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioView.swift; sourceTree = "<group>"; };
+		5245057B2DB6AE3F008A8765 /* PostAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIView.swift; sourceTree = "<group>"; };
+		5245057D2DB6AE52008A8765 /* CacheImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageView.swift; sourceTree = "<group>"; };
+		5245057F2DB6AE66008A8765 /* ParseJSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJSONView.swift; sourceTree = "<group>"; };
+		524505812DB6AE75008A8765 /* CombineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineView.swift; sourceTree = "<group>"; };
+		524505832DB6AE86008A8765 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		524505852DB6AE95008A8765 /* UserDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
+		524505872DB6AEA3008A8765 /* FileManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerView.swift; sourceTree = "<group>"; };
+		524505892DB6AEB2008A8765 /* KeyChainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainView.swift; sourceTree = "<group>"; };
+		5245058B2DB6AECD008A8765 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		5245058D2DB6AEDC008A8765 /* ThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
+		5245058F2DB6AEE7008A8765 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsView.swift; sourceTree = "<group>"; };
+		524505912DB6AEF1008A8765 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		524505932DB6AF03008A8765 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		524505952DB6AF0F008A8765 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +322,28 @@
 			children = (
 				524505622DB68E88008A8765 /* PlayMusicView.swift */,
 				524505642DB68E92008A8765 /* CallAPIView.swift */,
+				5245056B2DB6AD78008A8765 /* ARView.swift */,
+				5245056D2DB6ADA1008A8765 /* TakePictureView.swift */,
+				5245056F2DB6ADC6008A8765 /* CameraRollView.swift */,
+				524505712DB6ADD3008A8765 /* SavePhotoView.swift */,
+				524505732DB6ADE0008A8765 /* EditImageView.swift */,
+				524505752DB6ADFC008A8765 /* HapticView.swift */,
+				524505772DB6AE0F008A8765 /* RecordVideoView.swift */,
+				524505792DB6AE22008A8765 /* RecordAudioView.swift */,
+				5245057B2DB6AE3F008A8765 /* PostAPIView.swift */,
+				5245057D2DB6AE52008A8765 /* CacheImageView.swift */,
+				5245057F2DB6AE66008A8765 /* ParseJSONView.swift */,
+				524505812DB6AE75008A8765 /* CombineView.swift */,
+				524505832DB6AE86008A8765 /* CoreDataView.swift */,
+				524505852DB6AE95008A8765 /* UserDefaultsView.swift */,
+				524505872DB6AEA3008A8765 /* FileManagerView.swift */,
+				524505892DB6AEB2008A8765 /* KeyChainView.swift */,
+				5245058B2DB6AECD008A8765 /* FormView.swift */,
+				5245058D2DB6AEDC008A8765 /* ThemesView.swift */,
+				5245058F2DB6AEE7008A8765 /* AnimationsView.swift */,
+				524505912DB6AEF1008A8765 /* LocationsView.swift */,
+				524505932DB6AF03008A8765 /* MapView.swift */,
+				524505952DB6AF0F008A8765 /* NotificationsView.swift */,
 			);
 			path = GameViews;
 			sourceTree = "<group>";
@@ -427,9 +493,21 @@
 			files = (
 				524505552DB58C63008A8765 /* VentureEngine.swift in Sources */,
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
+				524505722DB6ADD3008A8765 /* SavePhotoView.swift in Sources */,
+				524505862DB6AE95008A8765 /* UserDefaultsView.swift in Sources */,
+				5245058E2DB6AEDC008A8765 /* ThemesView.swift in Sources */,
+				524505742DB6ADE0008A8765 /* EditImageView.swift in Sources */,
+				524505702DB6ADC6008A8765 /* CameraRollView.swift in Sources */,
+				524505942DB6AF03008A8765 /* MapView.swift in Sources */,
+				524505782DB6AE0F008A8765 /* RecordVideoView.swift in Sources */,
 				524505672DB6A6A5008A8765 /* AboutGameView.swift in Sources */,
 				524504F62DB2E91B008A8765 /* ViewController.swift in Sources */,
+				524505822DB6AE75008A8765 /* CombineView.swift in Sources */,
 				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
+				5245056C2DB6AD78008A8765 /* ARView.swift in Sources */,
+				5245058A2DB6AEB2008A8765 /* KeyChainView.swift in Sources */,
+				524505962DB6AF0F008A8765 /* NotificationsView.swift in Sources */,
+				5245056E2DB6ADA1008A8765 /* TakePictureView.swift in Sources */,
 				5245054A2DB561B6008A8765 /* TextDemo.swift in Sources */,
 				524505442DB53794008A8765 /* WidgetDemoDetailsViewController.swift in Sources */,
 				5245053D2DB531F9008A8765 /* WidgetRegistry.swift in Sources */,
@@ -440,12 +518,22 @@
 				524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */,
 				524505502DB57771008A8765 /* VentureViewController.swift in Sources */,
 				524505582DB58C7F008A8765 /* VentureNode.swift in Sources */,
+				5245057E2DB6AE52008A8765 /* CacheImageView.swift in Sources */,
+				5245058C2DB6AECE008A8765 /* FormView.swift in Sources */,
+				524505842DB6AE86008A8765 /* CoreDataView.swift in Sources */,
+				524505802DB6AE66008A8765 /* ParseJSONView.swift in Sources */,
+				524505922DB6AEF1008A8765 /* LocationsView.swift in Sources */,
 				524505332DB30699008A8765 /* Extensions.swift in Sources */,
 				5245054C2DB57051008A8765 /* AuthorViewController.swift in Sources */,
 				524504F42DB2E91B008A8765 /* SceneDelegate.swift in Sources */,
+				524505902DB6AEE7008A8765 /* AnimationsView.swift in Sources */,
 				524505312DB3066B008A8765 /* CodeOverlayManager.swift in Sources */,
 				5245052F2DB2F6BA008A8765 /* AboutViewController.swift in Sources */,
+				5245057C2DB6AE3F008A8765 /* PostAPIView.swift in Sources */,
+				524505762DB6ADFC008A8765 /* HapticView.swift in Sources */,
+				524505882DB6AEA3008A8765 /* FileManagerView.swift in Sources */,
 				5245052D2DB2F6B1008A8765 /* BrowseViewController.swift in Sources */,
+				5245057A2DB6AE22008A8765 /* RecordAudioView.swift in Sources */,
 				524505632DB68E88008A8765 /* PlayMusicView.swift in Sources */,
 				524505462DB53891008A8765 /* WidgetDemoProtocol.swift in Sources */,
 				524505402DB5321F008A8765 /* ButtonDemo.swift in Sources */,

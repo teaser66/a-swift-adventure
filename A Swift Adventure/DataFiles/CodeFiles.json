@@ -23,9 +23,34 @@
     "ButtonDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/ButtonDemo.swift",
     "TextDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/TextDemo.swift",
     "VentureNode": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Models/VentureNode.swift",
+    "AboutGameView": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Views/AboutGameView.swift",
     "playMusic": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/PlayMusicView.swift",
-    "callAPI": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CallAPIView.swift",
-    "AboutGameView": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Views/AboutGameView.swift"
-    
-    
+      "callAPI": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CallAPIView.swift",
+      "getAPI": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/APICallView.swift",
+      "takePicture": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/TakePictureView.swift",
+        "getCameraRoll": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CameraRollView.swift",
+        "saveToPhotos": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/SavePhotoView.swift",
+        "editImage": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/EditImageView.swift",
+        "recordVideo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/RecordVideoView.swift",
+        "recordAudio": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/RecordAudioView.swift",
+        "playMusic": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/PlayMusicView.swift",
+        "getAPI": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/APICallView.swift",
+        "postAPI": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/PostAPIView.swift",
+        "cacheImage": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CacheImageView.swift",
+        "parseJSON": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/ParseJSONView.swift",
+        "combineURLSession": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CombineView.swift",
+        "coreData": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CoreDataView.swift",
+        "userDefaults": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/UserDefaultsView.swift",
+        "fileManager": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/FileManagerView.swift",
+        "keychain": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/KeychainView.swift",
+        "formFun": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/FormView.swift",
+        "themes": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/ThemesView.swift",
+        "animations": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/AnimationsView.swift",
+        "getLocation": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/LocationView.swift",
+        "mapkit": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/MapView.swift",
+        "localNotifications": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/NotificationsView.swift",
+        "haptic": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/HapticView.swift",
+        "arKit": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/ARView.swift",
+        "none": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/EmptyView.swift"
+
 }

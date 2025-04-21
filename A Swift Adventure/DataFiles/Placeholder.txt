@@ -137,3 +137,94 @@ struct WidgetRegistry {
         ProgressViewDemo()
     ]
 }
+
+----------------------------------------
+
+📸 Media / Camera / Photos
+Take a picture using the camera
+Pick image(s) from camera roll / photo library
+Save image to photo library
+Use PHPickerViewController (modern image picker)
+Use AVFoundation to record video/audio
+Use UIImagePickerController (legacy, still valid)
+Image editing / cropping
+Live camera preview using AVCaptureSession
+🌐 Networking / APIs
+Make GET request using URLSession
+Make POST/PUT/DELETE requests
+Upload a file (image, PDF, etc.)
+Download and cache images (via URLCache or third-party like Kingfisher)
+Use Codable for JSON parsing
+Use async/await with networking
+Combine with URLSession.DataTaskPublisher
+💾 Data Persistence
+Use UserDefaults
+Use CoreData with custom entities and relationships
+Use FileManager to save/load files
+Use Keychain for secure storage
+Read/write JSON to documents folder
+Use SQLite directly (e.g., via GRDB)
+📱 UI & UX Features
+Build lists using List or UITableView
+Create forms with validation
+Use NavigationStack or NavigationView
+Use Sheet, Popover, and full-screen modals
+Create a custom TabView / UITabBarController
+Dark Mode + Dynamic Type support
+Use SF Symbols
+Drag and drop support
+Reorderable lists
+Swipe to delete/edit
+Animations using SwiftUI or UIView.animate
+📍 Location & Maps
+Get current GPS location
+Show map using MapKit
+Drop pins / custom annotations
+Geofencing
+Directions and route overlays
+🔔 Notifications & Background
+Local notifications
+Push notifications (with Firebase or APNs)
+Background fetch
+Background audio playback
+Background location tracking
+🧠 AI & ML
+CoreML model inference
+Vision framework (text/image detection)
+Image classification
+Face detection and landmarks
+Barcode / QR scanning
+🛠 System Services & Frameworks
+Share sheet (UIActivityViewController)
+Open URLs / deep links
+Copy to clipboard
+Haptic feedback
+Siri Shortcuts
+App Clips
+In-App Purchases
+Sign in with Apple
+Use Combine
+Use SwiftData (if exploring newer options)
+Use RealityKit / ARKit
+🧪 Testing & Debugging
+Unit tests with XCTest
+UI tests
+Snapshot tests
+Debug memory usage and leaks (Instruments)
+Use TestFlight and App Store Connect tools
+📲 App Infrastructure
+Use App Groups to share data across extensions
+Use AppDelegate, SceneDelegate, UIApplicationDelegateAdaptor
+Remote config (e.g., Firebase Remote Config)
+Feature flags
+Analytics events (custom / Firebase / Mixpanel)
+Dependency injection (with environment, singletons, or DI frameworks)
+🔧 Developer Showoff Extras
+Build a Swift Package
+Use modular architecture
+Use custom SwiftUI transitions
+Design reusable SwiftUI components
+Build a REST client
+Offline-first support with syncing
+Integrate GraphQL (Apollo, etc.)
+Theme engine with dynamic colors

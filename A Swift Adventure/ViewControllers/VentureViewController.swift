@@ -116,10 +116,54 @@ struct ModalExperienceView: View {
                         switch modalType {
                         case .playMusic:
                             PlayMusicView()
-                        case .callAPI:
+                        case .getAPI:
                             APICallView()
                         case .none:
                             EmptyView()
+                        case .takePicture:
+                            TakePictureView()
+                        case .getCameraRoll:
+                            CameraRollView()
+                        case .saveToPhotos:
+                            SavePhotoView()
+                        case .editImage:
+                            EditImageView()
+                        case .recordVideo:
+                            RecordVideoView()
+                        case .recordAudio:
+                            RecordAudioView()
+                        case .postAPI:
+                            PostAPIView()
+                        case .cacheImage:
+                            CacheImageView()
+                        case .parseJSON:
+                            ParseJSONView()
+                        case .combineURLSession:
+                            CombineView()
+                        case .coreData:
+                            CoreDataView()
+                        case .userDefaults:
+                            UserDefaultsView()
+                        case .fileManager:
+                            FileManagerView()
+                        case .keychain:
+                            KeychainView()
+                        case .formFun:
+                            FormView()
+                        case .themes:
+                            ThemesView()
+                        case .animations:
+                            AnimationsView()
+                        case .getLocation:
+                            LocationView()
+                        case .mapkit:
+                            MapView()
+                        case .localNotifications:
+                            NotificationsView()
+                        case .haptic:
+                            HapticView()
+                        case .arKit:
+                            ARView()
                         }
                     }
                 }

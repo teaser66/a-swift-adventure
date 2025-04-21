@@ -84,7 +84,7 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "About the author"
+                cell.textLabel?.text = "About the developer"
                 cell.accessoryType = .disclosureIndicator
             case 1:
                 cell.textLabel?.text = "About the game"
