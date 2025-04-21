@@ -19,13 +19,18 @@ class VentureViewController: UIViewController, CodeShowable {
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        let engineWrapper = VentureEngineWrapper() // Use the wrapper
+        title = "A Swift Adventure"
+        navigationItem.hidesBackButton = true // Hide default back button
+
+        // Add Reset button
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Restart", style: .plain, target: self, action: #selector(resetTapped))
+
+        let engineWrapper = VentureEngineWrapper()
         guard let startNode = engineWrapper.currentNode else { return }
 
         let rootView = VentureView(node: startNode, engineWrapper: engineWrapper, onChoiceSelected: navigateToNextScreen)
 
         let hostingController = UIHostingController(rootView: rootView)
-
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -40,11 +45,24 @@ class VentureViewController: UIViewController, CodeShowable {
         hostingController.didMove(toParent: self)
     }
 
+
     // This method is called when a choice is selected in the SwiftUI view
     private func navigateToNextScreen(choice: VentureChoice) {
         let modalType = ModalType(rawValue: choice.nextNodeID) ?? .none
         let newViewController = GameActionViewController(incomingAction: modalType)
         navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    @objc private func resetTapped() {
+        let alert = UIAlertController(title: "Restart Adventure", message: "Are you sure you want to start over?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
