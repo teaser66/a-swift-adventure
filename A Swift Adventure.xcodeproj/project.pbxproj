@@ -63,6 +63,7 @@
 		524505922DB6AEF1008A8765 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505912DB6AEF1008A8765 /* LocationsView.swift */; };
 		524505942DB6AF03008A8765 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505932DB6AF03008A8765 /* MapView.swift */; };
 		524505962DB6AF0F008A8765 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505952DB6AF0F008A8765 /* NotificationsView.swift */; };
+		529581312DB6DCA700805186 /* GameActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529581302DB6DCA700805186 /* GameActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		524505912DB6AEF1008A8765 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		524505932DB6AF03008A8765 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		524505952DB6AF0F008A8765 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		529581302DB6DCA700805186 /* GameActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				5245052A2DB2F661008A8765 /* MainTabBarController.swift */,
 				524504F52DB2E91B008A8765 /* ViewController.swift */,
 				5245054F2DB57771008A8765 /* VentureViewController.swift */,
+				529581302DB6DCA700805186 /* GameActionViewController.swift */,
 				5245052E2DB2F6BA008A8765 /* AboutViewController.swift */,
 				5245054B2DB57051008A8765 /* AuthorViewController.swift */,
 				5245052C2DB2F6B1008A8765 /* BrowseViewController.swift */,
@@ -494,6 +497,7 @@
 				524505552DB58C63008A8765 /* VentureEngine.swift in Sources */,
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
 				524505722DB6ADD3008A8765 /* SavePhotoView.swift in Sources */,
+				529581312DB6DCA700805186 /* GameActionViewController.swift in Sources */,
 				524505862DB6AE95008A8765 /* UserDefaultsView.swift in Sources */,
 				5245058E2DB6AEDC008A8765 /* ThemesView.swift in Sources */,
 				524505742DB6ADE0008A8765 /* EditImageView.swift in Sources */,

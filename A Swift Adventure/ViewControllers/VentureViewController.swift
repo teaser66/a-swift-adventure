@@ -11,6 +11,7 @@ import UIKit
 import SwiftUI
 import WebKit
 
+
 class VentureViewController: UIViewController, CodeShowable {
     var codeKey: String { return "VentureViewController" }
     var codeFileKeys: [String] = []
@@ -18,12 +19,12 @@ class VentureViewController: UIViewController, CodeShowable {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
+        
         let engineWrapper = VentureEngineWrapper() // Use the wrapper
         guard let startNode = engineWrapper.currentNode else { return }
-
-        let rootView = VentureView(node: startNode, engineWrapper: engineWrapper)
-
+        
+        let rootView = VentureView(node: startNode, engineWrapper: engineWrapper, onChoiceSelected: navigateToNextScreen)
+        
         let hostingController = UIHostingController(rootView: rootView)
 
         addChild(hostingController)
@@ -39,21 +40,30 @@ class VentureViewController: UIViewController, CodeShowable {
 
         hostingController.didMove(toParent: self)
     }
+
+    // This method is called when a choice is selected in the SwiftUI view
+    private func navigateToNextScreen(choice: VentureChoice) {
+        // Create the new destination screen
+        let newViewController = GameActionViewController() 
+        
+        // Navigate to the new screen while keeping the back button functionality intact
+        navigationController?.pushViewController(newViewController, animated: true)
+    }
 }
 
-
-// MARK: - SwiftUI Venture View and Supporting Types
-
+// SwiftUI View that represents the adventure UI
 struct VentureView: View {
     @ObservedObject var engineWrapper: VentureEngineWrapper
     @State private var currentNode: VentureNode?
     @State private var choices: [VentureChoice] = []
+    var onChoiceSelected: (VentureChoice) -> Void // Closure for choice selection
     
-    init(node: VentureNode, engineWrapper: VentureEngineWrapper) {
+    init(node: VentureNode, engineWrapper: VentureEngineWrapper, onChoiceSelected: @escaping (VentureChoice) -> Void) {
         self._currentNode = State(initialValue: node)
         self._engineWrapper = ObservedObject(initialValue: engineWrapper)
+        self.onChoiceSelected = onChoiceSelected
     }
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -119,9 +129,12 @@ struct VentureView: View {
             // Update choices array
             choices = randomChoices
         }
-    }
 
+        // Trigger the navigation when a choice is selected
+        onChoiceSelected(choice)
+    }
 }
+
 
 struct NodeDetailView: View {
     var node: VentureNode
