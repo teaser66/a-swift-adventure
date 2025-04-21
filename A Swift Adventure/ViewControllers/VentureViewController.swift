@@ -1,3 +1,12 @@
+
+
+//
+//  VentureViewController.swift
+//  A Swift Adventure
+//
+//  Created by Rob Faiella on 4/18/25.
+//
+
 import UIKit
 import SwiftUI
 import WebKit
@@ -9,9 +18,13 @@ class VentureViewController: UIViewController, CodeShowable {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        let ventureView = VentureView()
-        let hostingController = UIHostingController(rootView: ventureView)
+
+        let engineWrapper = VentureEngineWrapper() // Use the wrapper
+        guard let startNode = engineWrapper.currentNode else { return }
+
+        let rootView = VentureView(node: startNode, engineWrapper: engineWrapper)
+
+        let hostingController = UIHostingController(rootView: rootView)
 
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -28,56 +41,118 @@ class VentureViewController: UIViewController, CodeShowable {
     }
 }
 
+
 // MARK: - SwiftUI Venture View and Supporting Types
 
 struct VentureView: View {
-    @StateObject private var engine = VentureEngineWrapper()
-    @State private var activeModalTypeRaw: String?
+    @ObservedObject var engineWrapper: VentureEngineWrapper
+    @State private var currentNode: VentureNode?
+    @State private var choices: [VentureChoice] = []
+    
+    init(node: VentureNode, engineWrapper: VentureEngineWrapper) {
+        self._currentNode = State(initialValue: node)
+        self._engineWrapper = ObservedObject(initialValue: engineWrapper)
+    }
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                if let imageName = currentNode?.imageName, let image = UIImage(named: imageName) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                        .padding()
+                }
+                
+                // Display current node's details
+                if let currentNode = currentNode {
+                    Text(currentNode.prettyText)
+                        .font(.headline)
+                        .padding()
+                    
+                    // Show available choices
+                    ForEach(choices, id: \.nextNodeID) { choice in
+                        Button(action: {
+                            handleChoice(choice)
+                        }) {
+                            Text(choice.title)
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        }
+                        .padding(4)
+                    }
+                }
+            }
+            .navigationBarTitle("Venture Adventure", displayMode: .inline)
+            .onAppear {
+                loadCurrentNode()
+            }
+        }
+    }
+    
+    private func loadCurrentNode() {
+        if let current = engineWrapper.currentNode {
+            currentNode = current
+            
+            // Get random choices for the current node
+            let randomChoices = engineWrapper.getRandomChoices(limit: 2)
+            
+            // Update choices array
+            choices = randomChoices
+        }
+    }
+
+    private func handleChoice(_ choice: VentureChoice) {
+        // Mark this choice as seen in the engine
+        engineWrapper.advance(to: choice.nextNodeID)
+
+        // Update the currentNode and choices for the new state
+        if let nextNode = engineWrapper.currentNode {
+            currentNode = nextNode
+            
+            // Get random choices for the next node
+            let randomChoices = engineWrapper.getRandomChoices(limit: 2)
+            
+            // Update choices array
+            choices = randomChoices
+        }
+    }
+
+}
+
+struct NodeDetailView: View {
+    var node: VentureNode
 
     var body: some View {
         VStack {
-            if let node = engine.currentNode {
-                Image(node.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 300)
+            Text(node.prettyText)
+                .font(.headline)
+                .padding()
 
-                Text(node.text)
-                    .padding()
-
-                // Use random, unseen choices
-                let choices = engine.getRandomChoices(from: node.choices ?? [])
-                ForEach(choices, id: \.title) { choice in
-                    Button(action: {
-                        if choice.modalType != .none {
-                            activeModalTypeRaw = choice.modalType.rawValue
-                        }
-                        engine.advance(to: choice.nextNodeID)
-                    }) {
-                        Text(choice.prettyText)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    .padding(.horizontal)
-                }
-            } else {
-                Text("Game Over")
+            Button("Go Back") {
+                // Go back to the previous node
             }
-        }
-        .sheet(item: $activeModalTypeRaw) { modalRaw in
-            if let modal = ModalType(rawValue: modalRaw) {
-                ModalExperienceView(modalType: modal, dismissAction: {
-                    activeModalTypeRaw = nil
-                })
-            }
+            .padding()
+            .background(Color.red)
+            .foregroundColor(.white)
+            .cornerRadius(8)
         }
     }
 }
 
-
+struct GameOverView: View {
+    var body: some View {
+        VStack {
+            Text("Game Over")
+                .font(.largeTitle)
+                .padding()
+            Spacer()
+        }
+    }
+}
 
 struct ModalExperienceView: View {
     let modalType: ModalType
@@ -219,9 +294,9 @@ class VentureEngineWrapper: ObservableObject {
     }
 
     // Expose getRandomChoices method correctly
-    func getRandomChoices(from choices: [VentureChoice]) -> [VentureChoice] {
-        // Explicitly access the method from VentureEngine
-        return self.engine.getRandomChoices()
+    func getRandomChoices(limit: Int = 2) -> [VentureChoice] {
+        // If choices are nil or empty, return an empty array
+        return self.engine.getRandomChoices(limit: limit)
     }
 
     func advance(to id: String) {
@@ -245,4 +320,3 @@ struct WebView: UIViewRepresentable {
         }
     }
 }
-

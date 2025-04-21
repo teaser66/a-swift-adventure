@@ -148,11 +148,5 @@
         "imageName": "arKitImage",
         "text": "Display an AR experience.",
         "prettyText": "Show augmented reality (AR) content."
-    },
-    {
-        "id": "none",
-        "imageName": "noneImage",
-        "text": "This is a default action.",
-        "prettyText": "No action has been selected."
     }
 ]

@@ -10,57 +10,57 @@ import Foundation
 class VentureEngine {
     private var nodes: [String: VentureNode] = [:]
     private(set) var currentNode: VentureNode?
-    private var seenModalTypes: Set<String> = []
+    private var seenNodeIDs: Set<String> = []
 
     init() {
         loadNodes()
-        currentNode = nodes["start"]
+        if let start = nodes["start"] {
+            currentNode = start
+            seenNodeIDs.insert(start.id)
+        }
     }
 
     private func loadNodes() {
-        if let url = Bundle.main.url(forResource: "nodes", withExtension: "json") {
-            if let data = try? Data(contentsOf: url),
-               let decoded = try? JSONDecoder().decode([VentureNode].self, from: data) {
-                for node in decoded {
-                    nodes[node.id] = node
-                }
-            } else {
-                print("no nodes 1")
+        guard let url = Bundle.main.url(forResource: "nodes", withExtension: "json") else {
+            print("No nodes file found")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode([VentureNode].self, from: data)
+            for node in decoded {
+                nodes[node.id] = node
             }
-        } else {
-            print("no nodes")
+        } catch {
+            print("Failed to load or decode nodes: \(error)")
         }
     }
 
-    func advance(to id: String) {
-        currentNode = nodes[id]
+    @discardableResult
+    func advance(to id: String) -> VentureNode? {
+        if let next = nodes[id] {
+            currentNode = next
+            seenNodeIDs.insert(next.id)
+            return next
+        }
+        return nil
     }
 
-    // Get choices dynamically based on the nodes that have not been seen yet
-    public func getRandomChoices() -> [VentureChoice] {
-        // Fetch available nodes that haven't been seen
-        let availableNodes = nodes.filter { !seenModalTypes.contains($0.key) }.map { $0.value }
+    func getChoices() -> [VentureChoice] {
+        return currentNode?.choices ?? []
+    }
 
-        // Now, build choices for each of those nodes. Here we're assuming each node should generate choices for the next step
-        var potentialChoices: [VentureChoice] = []
+    func getRandomChoices(limit: Int = 2) -> [VentureChoice] {
+        // Only show nodes that haven't been visited yet
+        let unseenNodes = nodes.values.filter { !seenNodeIDs.contains($0.id) }
 
-        for node in availableNodes {
-            // Assuming you want to pick random choices from available nodes
-            let choice = VentureChoice(title: "Go to \(node.id)", nextNodeID: node.id, modalType: .none, prettyText: node.prettyText)
-            potentialChoices.append(choice)
+        let choices = unseenNodes.map { node in
+            // Ensure that prettyText is never nil, use a fallback if necessary
+            let choiceText = node.prettyText.isEmpty ? "Go to \(node.id)" : node.prettyText
+            return VentureChoice(title: choiceText, nextNodeID: node.id, modalType: .none, prettyText: choiceText)
         }
 
-        // Filter out any seen modal types
-        let availableChoices = potentialChoices.filter { !seenModalTypes.contains($0.modalType.rawValue) }
-        
-        // If there are fewer than 2 available choices, include all potential choices
-        let randomChoices = availableChoices.shuffled().prefix(2)
-        
-        // Mark the modal types of chosen nodes as seen
-        for choice in randomChoices {
-            seenModalTypes.insert(choice.modalType.rawValue)
-        }
-        
-        return Array(randomChoices)
+        return Array(choices.shuffled().prefix(limit))
     }
 }
