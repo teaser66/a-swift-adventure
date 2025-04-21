@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CodeShowable {
     var codeKey: String { return "AboutViewController" }
@@ -62,7 +63,7 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         switch section {
         case 0:
-            return 1
+            return 2
         case 1:
             return 3
         case 2:
@@ -81,8 +82,16 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         if indexPath.section == 0 {
-            cell.textLabel?.text = "About the author"
-            cell.accessoryType = .disclosureIndicator
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "About the author"
+                cell.accessoryType = .disclosureIndicator
+            case 1:
+                cell.textLabel?.text = "About the game"
+                cell.accessoryType = .disclosureIndicator
+            default:
+                cell.textLabel?.text = ""
+            }
         }  else if indexPath.section == 1{
             switch indexPath.row {
             case 0:
@@ -107,8 +116,17 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            let aboutVC = AuthorViewController()
-            navigationController?.pushViewController(aboutVC, animated: true)
+            switch indexPath.row {
+            case 0:
+                let aboutVC = AuthorViewController()
+                navigationController?.pushViewController(aboutVC, animated: true)
+            case 1:
+                let swiftUIView = AboutGameView(title: "The Game")
+                 let hostingVC = SwiftUICodeWrapper(rootView: swiftUIView, codeKey: "AboutGameView")
+                 navigationController?.pushViewController(hostingVC, animated: true)
+            default:
+                print("Invalid row")
+            }
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:

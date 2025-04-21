@@ -39,6 +39,8 @@
 		5245055C2DB58C9F008A8765 /* nodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5245055B2DB58C9F008A8765 /* nodes.json */; };
 		524505632DB68E88008A8765 /* PlayMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505622DB68E88008A8765 /* PlayMusicView.swift */; };
 		524505652DB68E92008A8765 /* CallAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505642DB68E92008A8765 /* CallAPIView.swift */; };
+		524505672DB6A6A5008A8765 /* AboutGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505662DB6A6A5008A8765 /* AboutGameView.swift */; };
+		5245056A2DB6A8A7008A8765 /* SwiftUICodeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505692DB6A8A7008A8765 /* SwiftUICodeWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		5245055B2DB58C9F008A8765 /* nodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nodes.json; sourceTree = "<group>"; };
 		524505622DB68E88008A8765 /* PlayMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusicView.swift; sourceTree = "<group>"; };
 		524505642DB68E92008A8765 /* CallAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPIView.swift; sourceTree = "<group>"; };
+		524505662DB6A6A5008A8765 /* AboutGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGameView.swift; sourceTree = "<group>"; };
+		524505692DB6A8A7008A8765 /* SwiftUICodeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICodeWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			children = (
 				524505352DB307E0008A8765 /* Delegates */,
 				524505342DB3074D008A8765 /* ViewControllers */,
+				524505682DB6A6BD008A8765 /* Views */,
 				524505612DB68E6F008A8765 /* GameViews */,
 				524505372DB307F4008A8765 /* Managers */,
 				524505562DB58C75008A8765 /* Models */,
@@ -191,6 +196,7 @@
 				524505262DB2EC6E008A8765 /* CodeViewController.swift */,
 				524505412DB5327F008A8765 /* WidgetShowcaseViewController.swift */,
 				524505432DB53794008A8765 /* WidgetDemoDetailsViewController.swift */,
+				524505692DB6A8A7008A8765 /* SwiftUICodeWrapper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -274,6 +280,14 @@
 				524505642DB68E92008A8765 /* CallAPIView.swift */,
 			);
 			path = GameViews;
+			sourceTree = "<group>";
+		};
+		524505682DB6A6BD008A8765 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				524505662DB6A6A5008A8765 /* AboutGameView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +427,7 @@
 			files = (
 				524505552DB58C63008A8765 /* VentureEngine.swift in Sources */,
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
+				524505672DB6A6A5008A8765 /* AboutGameView.swift in Sources */,
 				524504F62DB2E91B008A8765 /* ViewController.swift in Sources */,
 				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
 				5245054A2DB561B6008A8765 /* TextDemo.swift in Sources */,
@@ -420,6 +435,7 @@
 				5245053D2DB531F9008A8765 /* WidgetRegistry.swift in Sources */,
 				524504F22DB2E91B008A8765 /* AppDelegate.swift in Sources */,
 				524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */,
+				5245056A2DB6A8A7008A8765 /* SwiftUICodeWrapper.swift in Sources */,
 				524505652DB68E92008A8765 /* CallAPIView.swift in Sources */,
 				524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */,
 				524505502DB57771008A8765 /* VentureViewController.swift in Sources */,
