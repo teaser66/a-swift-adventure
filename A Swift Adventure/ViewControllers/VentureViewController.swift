@@ -45,14 +45,16 @@ struct VentureView: View {
                 Text(node.text)
                     .padding()
 
-                ForEach(node.choices, id: \.title) { choice in
+                // Use random, unseen choices
+                let choices = engine.getRandomChoices(from: node.choices ?? [])
+                ForEach(choices, id: \.title) { choice in
                     Button(action: {
-                        if let modal = choice.modalType, modal != .none {
-                            activeModalTypeRaw = modal.rawValue
+                        if choice.modalType != .none {
+                            activeModalTypeRaw = choice.modalType.rawValue
                         }
                         engine.advance(to: choice.nextNodeID)
                     }) {
-                        Text(choice.title)
+                        Text(choice.prettyText)
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(Color.blue)
@@ -68,13 +70,14 @@ struct VentureView: View {
         .sheet(item: $activeModalTypeRaw) { modalRaw in
             if let modal = ModalType(rawValue: modalRaw) {
                 ModalExperienceView(modalType: modal, dismissAction: {
-                    // Handle dismiss action, possibly by clearing modal
                     activeModalTypeRaw = nil
                 })
             }
         }
     }
 }
+
+
 
 struct ModalExperienceView: View {
     let modalType: ModalType
@@ -205,22 +208,20 @@ struct ModalExperienceView: View {
     }
 }
 
-
-
-
-// Extend ModalType to work with .sheet
-extension ModalType: Identifiable {
-    var id: String { self.rawValue }
-}
-
 // Observable wrapper for SwiftUI binding
 class VentureEngineWrapper: ObservableObject {
-    private var engine = VentureEngine()
-
+    private var engine = VentureEngine()  // Your existing VentureEngine instance
+    
     @Published var currentNode: VentureNode?
 
     init() {
         currentNode = engine.currentNode
+    }
+
+    // Expose getRandomChoices method correctly
+    func getRandomChoices(from choices: [VentureChoice]) -> [VentureChoice] {
+        // Explicitly access the method from VentureEngine
+        return self.engine.getRandomChoices()
     }
 
     func advance(to id: String) {
@@ -228,6 +229,7 @@ class VentureEngineWrapper: ObservableObject {
         currentNode = engine.currentNode
     }
 }
+
 
 struct WebView: UIViewRepresentable {
     var url: URL?

@@ -28,3 +28,8 @@ extension UIApplication {
 extension String: Identifiable {
     public var id: String { self }
 }
+
+// Extend ModalType to work with .sheet
+extension ModalType: Identifiable {
+    var id: String { self.rawValue }
+}

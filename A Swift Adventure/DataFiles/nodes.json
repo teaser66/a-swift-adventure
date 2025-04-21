@@ -1,50 +1,158 @@
-
 [
     {
         "id": "start",
         "imageName": "startImage",
-        "text": "You're standing at a crossroads.",
-        "choices": [
-            {
-                "title": "Take the left path",
-                "nextNodeID": "leftNode",
-                "modalType": "playMusic"
-            },
-            {
-                "title": "Take the right path",
-                "nextNodeID": "rightNode",
-                "modalType": "getAPI"
-            }
-        ]
+        "text": "Let's explore the Swift Universe!!",
+        "prettyText": "Start your adventure in the Swift Universe!"
     },
     {
-        "id": "leftNode",
-        "imageName": "forestPath",
-        "text": "You hear music playing...",
-        "choices": [
-            {
-                "title": "Continue",
-                "nextNodeID": "end",
-                "modalType": "none"
-            }
-        ]
+        "id": "takePicture",
+        "imageName": "takePictureImage",
+        "text": "Take a picture with the camera.",
+        "prettyText": "Capture a photo using your camera."
     },
     {
-        "id": "rightNode",
-        "imageName": "cityPath",
-        "text": "A terminal appears in front of you.",
-        "choices": [
-            {
-                "title": "Run the command",
-                "nextNodeID": "end",
-                "modalType": "getAPI"
-            }
-        ]
+        "id": "getCameraRoll",
+        "imageName": "cameraRollImage",
+        "text": "Choose an image from your camera roll.",
+        "prettyText": "Select an image from your photo gallery."
     },
     {
-        "id": "end",
-        "imageName": "endImage",
-        "text": "Your journey ends here.",
-        "choices": []
+        "id": "saveToPhotos",
+        "imageName": "saveToPhotosImage",
+        "text": "Save an image to your photos.",
+        "prettyText": "Save the selected image to your photo library."
+    },
+    {
+        "id": "editImage",
+        "imageName": "editImageImage",
+        "text": "Edit an image you have chosen.",
+        "prettyText": "Edit the chosen image to your liking."
+    },
+    {
+        "id": "recordVideo",
+        "imageName": "recordVideoImage",
+        "text": "Record a video.",
+        "prettyText": "Capture a video using your camera."
+    },
+    {
+        "id": "recordAudio",
+        "imageName": "recordAudioImage",
+        "text": "Record an audio clip.",
+        "prettyText": "Record a voice message or sound."
+    },
+    {
+        "id": "playMusic",
+        "imageName": "playMusicImage",
+        "text": "Play music.",
+        "prettyText": "Listen to your favorite music."
+    },
+    {
+        "id": "getAPI",
+        "imageName": "apiImage",
+        "text": "Call an API.",
+        "prettyText": "Make a request to an external API."
+    },
+    {
+        "id": "postAPI",
+        "imageName": "postAPIImage",
+        "text": "Post data to an API.",
+        "prettyText": "Send data to an API endpoint."
+    },
+    {
+        "id": "cacheImage",
+        "imageName": "cacheImageImage",
+        "text": "Cache an image.",
+        "prettyText": "Store an image for later use."
+    },
+    {
+        "id": "parseJSON",
+        "imageName": "parseJSONImage",
+        "text": "Parse some JSON data.",
+        "prettyText": "Convert JSON data into a usable format."
+    },
+    {
+        "id": "combineURLSession",
+        "imageName": "combineURLSessionImage",
+        "text": "Combine multiple URL requests.",
+        "prettyText": "Make multiple network requests and combine them."
+    },
+    {
+        "id": "coreData",
+        "imageName": "coreDataImage",
+        "text": "Interact with Core Data.",
+        "prettyText": "Work with your app's local database (Core Data)."
+    },
+    {
+        "id": "userDefaults",
+        "imageName": "userDefaultsImage",
+        "text": "Save data to UserDefaults.",
+        "prettyText": "Store small data locally using UserDefaults."
+    },
+    {
+        "id": "fileManager",
+        "imageName": "fileManagerImage",
+        "text": "Work with file management.",
+        "prettyText": "Handle files and directories on the device."
+    },
+    {
+        "id": "keychain",
+        "imageName": "keychainImage",
+        "text": "Save data to Keychain.",
+        "prettyText": "Store sensitive data securely in the Keychain."
+    },
+    {
+        "id": "formFun",
+        "imageName": "formFunImage",
+        "text": "Create and submit a form.",
+        "prettyText": "Build and submit user forms within the app."
+    },
+    {
+        "id": "themes",
+        "imageName": "themesImage",
+        "text": "Apply a new theme.",
+        "prettyText": "Change the visual theme of the app."
+    },
+    {
+        "id": "animations",
+        "imageName": "animationsImage",
+        "text": "Animate an element.",
+        "prettyText": "Add animated transitions or effects to elements."
+    },
+    {
+        "id": "getLocation",
+        "imageName": "getLocationImage",
+        "text": "Get your current location.",
+        "prettyText": "Retrieve your current geographical location."
+    },
+    {
+        "id": "mapkit",
+        "imageName": "mapkitImage",
+        "text": "Display a map using MapKit.",
+        "prettyText": "Show a map and location details with MapKit."
+    },
+    {
+        "id": "localNotifications",
+        "imageName": "localNotificationsImage",
+        "text": "Trigger a local notification.",
+        "prettyText": "Send a notification to alert the user."
+    },
+    {
+        "id": "haptic",
+        "imageName": "hapticImage",
+        "text": "Trigger a haptic feedback.",
+        "prettyText": "Provide haptic feedback for user interaction."
+    },
+    {
+        "id": "arKit",
+        "imageName": "arKitImage",
+        "text": "Display an AR experience.",
+        "prettyText": "Show augmented reality (AR) content."
+    },
+    {
+        "id": "none",
+        "imageName": "noneImage",
+        "text": "This is a default action.",
+        "prettyText": "No action has been selected."
     }
 ]

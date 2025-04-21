@@ -5,17 +5,19 @@
 //  Created by Rob Faiella on 4/20/25.
 //
 
-struct VentureNode: Codable {
+struct VentureNode: Identifiable, Codable {
     let id: String
     let imageName: String
     let text: String
-    let choices: [VentureChoice]
+    let choices: [VentureChoice]?
+    let prettyText: String
 }
 
 struct VentureChoice: Codable {
     let title: String
     let nextNodeID: String
-    let modalType: ModalType?
+    let modalType: ModalType
+    let prettyText: String
 }
 
 enum ModalType: String, Codable {
