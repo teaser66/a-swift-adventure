@@ -13,7 +13,7 @@
             {
                 "title": "Take the right path",
                 "nextNodeID": "rightNode",
-                "modalType": "callAPI"
+                "modalType": "getAPI"
             }
         ]
     },
@@ -37,7 +37,7 @@
             {
                 "title": "Run the command",
                 "nextNodeID": "end",
-                "modalType": "callAPI"
+                "modalType": "getAPI"
             }
         ]
     },
