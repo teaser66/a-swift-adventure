@@ -34,6 +34,16 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         UserDefaults.standard.set(selectedIndex, forKey: savedTabKey)
     }
+    
+    // Prevent auto-pop to root on re-tap of the current tab
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        // If the selected tab is tapped again, don't reselect
+        if let selectedVC = selectedViewController,
+           selectedVC == viewController {
+            return false
+        }
+        return true
+    }
 }
 
 
