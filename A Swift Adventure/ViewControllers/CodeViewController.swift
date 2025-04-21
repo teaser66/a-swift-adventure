@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SwiftUI
 
 class CodeViewController: UIViewController {
     
@@ -172,3 +173,21 @@ class CodeViewController: UIViewController {
 protocol CodeShowable {
     var codeKey: String { get }
 }
+
+
+struct CodeViewControllerWrapper: UIViewControllerRepresentable {
+    let fileKey: String
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        print("Creating CodeViewController with key: \(fileKey)")
+        let vc = CodeViewController()
+        vc.fileKey = fileKey
+        return vc
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        print("Updating CodeViewController")
+    }
+}
+
+
