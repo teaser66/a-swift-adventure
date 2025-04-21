@@ -83,8 +83,6 @@ class WidgetShowcaseViewController: UIViewController, CodeShowable {
         codeButton.setTitle("Code For This \(demo.title) Widget", for: .normal)
         codeButton.addTarget(self, action: #selector(showWidgetCode), for: .touchUpInside)
 
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareContent))
-
         view.addSubview(segment)
         view.addSubview(codeButton)
         view.addSubview(instructionsTextView)
@@ -166,13 +164,4 @@ class WidgetShowcaseViewController: UIViewController, CodeShowable {
         topVC.present(modal, animated: true)
     }
 
-    @objc private func shareContent() {
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        let image = renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        }
-
-        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        present(activityVC, animated: true)
-    }
 }

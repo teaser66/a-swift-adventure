@@ -34,6 +34,9 @@
 		5245054E2DB573E3008A8765 /* author.html in Resources */ = {isa = PBXBuildFile; fileRef = 5245054D2DB573E3008A8765 /* author.html */; };
 		524505502DB57771008A8765 /* VentureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245054F2DB57771008A8765 /* VentureViewController.swift */; };
 		524505522DB57FC5008A8765 /* Placeholder.txt in Resources */ = {isa = PBXBuildFile; fileRef = 524505512DB57FC5008A8765 /* Placeholder.txt */; };
+		524505552DB58C63008A8765 /* VentureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505542DB58C63008A8765 /* VentureEngine.swift */; };
+		524505582DB58C7F008A8765 /* VentureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505572DB58C7F008A8765 /* VentureNode.swift */; };
+		5245055C2DB58C9F008A8765 /* nodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5245055B2DB58C9F008A8765 /* nodes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		5245054D2DB573E3008A8765 /* author.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = author.html; sourceTree = "<group>"; };
 		5245054F2DB57771008A8765 /* VentureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureViewController.swift; sourceTree = "<group>"; };
 		524505512DB57FC5008A8765 /* Placeholder.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Placeholder.txt; sourceTree = "<group>"; };
+		524505542DB58C63008A8765 /* VentureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureEngine.swift; sourceTree = "<group>"; };
+		524505572DB58C7F008A8765 /* VentureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureNode.swift; sourceTree = "<group>"; };
+		5245055B2DB58C9F008A8765 /* nodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nodes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,19 +141,18 @@
 		524504F02DB2E91B008A8765 /* A Swift Adventure */ = {
 			isa = PBXGroup;
 			children = (
-				5245053E2DB53212008A8765 /* Demos */,
-				5245053B2DB531BE008A8765 /* Protocols */,
 				524505352DB307E0008A8765 /* Delegates */,
-				524505372DB307F4008A8765 /* Managers */,
 				524505342DB3074D008A8765 /* ViewControllers */,
+				524505372DB307F4008A8765 /* Managers */,
+				524505562DB58C75008A8765 /* Models */,
+				5245053B2DB531BE008A8765 /* Protocols */,
+				5245053E2DB53212008A8765 /* Demos */,
 				524505362DB307E8008A8765 /* Extensions */,
 				524505382DB30811008A8765 /* DataFiles */,
-				524504F72DB2E91B008A8765 /* Main.storyboard */,
+				524505532DB58B0F008A8765 /* Storyboards */,
 				524504FD2DB2E91F008A8765 /* Assets.xcassets */,
-				524504FF2DB2E91F008A8765 /* LaunchScreen.storyboard */,
 				524505022DB2E91F008A8765 /* Info.plist */,
 				524504FA2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld */,
-				524505512DB57FC5008A8765 /* Placeholder.txt */,
 			);
 			path = "A Swift Adventure";
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			children = (
 				524505302DB3066B008A8765 /* CodeOverlayManager.swift */,
 				5245053C2DB531F9008A8765 /* WidgetRegistry.swift */,
+				524505542DB58C63008A8765 /* VentureEngine.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -216,6 +222,8 @@
 			children = (
 				524505282DB2EF1D008A8765 /* CodeFiles.json */,
 				5245054D2DB573E3008A8765 /* author.html */,
+				524505512DB57FC5008A8765 /* Placeholder.txt */,
+				5245055B2DB58C9F008A8765 /* nodes.json */,
 			);
 			path = DataFiles;
 			sourceTree = "<group>";
@@ -235,6 +243,23 @@
 				524505492DB561B6008A8765 /* TextDemo.swift */,
 			);
 			path = Demos;
+			sourceTree = "<group>";
+		};
+		524505532DB58B0F008A8765 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				524504F72DB2E91B008A8765 /* Main.storyboard */,
+				524504FF2DB2E91F008A8765 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		524505562DB58C75008A8765 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				524505572DB58C7F008A8765 /* VentureNode.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +368,7 @@
 			files = (
 				524504FE2DB2E91F008A8765 /* Assets.xcassets in Resources */,
 				524505012DB2E91F008A8765 /* Base in Resources */,
+				5245055C2DB58C9F008A8765 /* nodes.json in Resources */,
 				524504F92DB2E91C008A8765 /* Base in Resources */,
 				524505292DB2EF1D008A8765 /* CodeFiles.json in Resources */,
 				524505522DB57FC5008A8765 /* Placeholder.txt in Resources */,
@@ -371,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524505552DB58C63008A8765 /* VentureEngine.swift in Sources */,
 				524504FC2DB2E91C008A8765 /* A_Swift_Adventure.xcdatamodeld in Sources */,
 				524504F62DB2E91B008A8765 /* ViewController.swift in Sources */,
 				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
@@ -381,6 +408,7 @@
 				524505272DB2EC6E008A8765 /* CodeViewController.swift in Sources */,
 				524505422DB5327F008A8765 /* WidgetShowcaseViewController.swift in Sources */,
 				524505502DB57771008A8765 /* VentureViewController.swift in Sources */,
+				524505582DB58C7F008A8765 /* VentureNode.swift in Sources */,
 				524505332DB30699008A8765 /* Extensions.swift in Sources */,
 				5245054C2DB57051008A8765 /* AuthorViewController.swift in Sources */,
 				524504F42DB2E91B008A8765 /* SceneDelegate.swift in Sources */,

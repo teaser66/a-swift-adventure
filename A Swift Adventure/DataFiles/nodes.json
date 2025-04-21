@@ -1,0 +1,50 @@
+
+[
+    {
+        "id": "start",
+        "imageName": "startImage",
+        "text": "You're standing at a crossroads.",
+        "choices": [
+            {
+                "title": "Take the left path",
+                "nextNodeID": "leftNode",
+                "modalType": "playMusic"
+            },
+            {
+                "title": "Take the right path",
+                "nextNodeID": "rightNode",
+                "modalType": "callAPI"
+            }
+        ]
+    },
+    {
+        "id": "leftNode",
+        "imageName": "forestPath",
+        "text": "You hear music playing...",
+        "choices": [
+            {
+                "title": "Continue",
+                "nextNodeID": "end",
+                "modalType": "none"
+            }
+        ]
+    },
+    {
+        "id": "rightNode",
+        "imageName": "cityPath",
+        "text": "A terminal appears in front of you.",
+        "choices": [
+            {
+                "title": "Run the command",
+                "nextNodeID": "end",
+                "modalType": "callAPI"
+            }
+        ]
+    },
+    {
+        "id": "end",
+        "imageName": "endImage",
+        "text": "Your journey ends here.",
+        "choices": []
+    }
+]
