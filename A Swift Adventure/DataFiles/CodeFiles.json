@@ -20,6 +20,7 @@
     "AuthorHTML": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/author.html",
     "CodeFiles": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/CodeFiles.json",
     "Nodes": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/nodes.json",
+    "nodes.json": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/nodes.json",
     "ButtonDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/ButtonDemo.swift",
     "TextDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/TextDemo.swift",
     "VentureNode": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Models/VentureNode.swift",
