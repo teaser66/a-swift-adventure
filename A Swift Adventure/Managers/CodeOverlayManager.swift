@@ -52,8 +52,7 @@ class CodeOverlayManager {
             let incomingAction = gavc?.incomingAction ?? .none
             let fileKeys = fileKeysFor(incomingAction)
             let codeListView = CodeListView(fileKeys: fileKeys)
-            let hostingController = UIHostingController(rootView: codeListView)
-            
+            let hostingController = SwiftUICodeWrapper(rootView: codeListView, codeKey: "CodeListView")
             // Push the hosting controller onto the navigation stack
             if let navController = topVC.navigationController {
                 navController.pushViewController(hostingController, animated: true)
