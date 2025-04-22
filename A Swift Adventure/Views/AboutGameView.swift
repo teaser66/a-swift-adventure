@@ -33,7 +33,7 @@ struct AboutGameView: View {
             
             Spacer()
 
-            Text("Check out the Engine, Node and JSON file below. The Node defines the structure of each choice in the game. \n\nThe Engine randomizes your net choice and tracks where you have been. \n\nAnd the JSON is simply the list of options.\n\nThen the correct SwiftUI view is added to the screen based on your choice.")
+            Text("Check out the Engine, Node and JSON file below. The Node defines the structure of each choice in the game. \n\nThe Engine randomizes your next choice and tracks where you have been. \n\nAnd the JSON is simply the list of options.\n\nThen the correct SwiftUI view is added to the screen based on your choice.")
                 .padding(.horizontal)
 
             List {

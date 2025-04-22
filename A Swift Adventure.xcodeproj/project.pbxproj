@@ -64,6 +64,7 @@
 		524505942DB6AF03008A8765 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505932DB6AF03008A8765 /* MapView.swift */; };
 		524505962DB6AF0F008A8765 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524505952DB6AF0F008A8765 /* NotificationsView.swift */; };
 		529581312DB6DCA700805186 /* GameActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529581302DB6DCA700805186 /* GameActionViewController.swift */; };
+		529581332DB7EA7500805186 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529581322DB7EA7500805186 /* CodeListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		524505932DB6AF03008A8765 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		524505952DB6AF0F008A8765 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		529581302DB6DCA700805186 /* GameActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActionViewController.swift; sourceTree = "<group>"; };
+		529581322DB7EA7500805186 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				524505662DB6A6A5008A8765 /* AboutGameView.swift */,
+				529581322DB7EA7500805186 /* CodeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				524505822DB6AE75008A8765 /* CombineView.swift in Sources */,
 				5245052B2DB2F662008A8765 /* MainTabBarController.swift in Sources */,
 				5245056C2DB6AD78008A8765 /* ARView.swift in Sources */,
+				529581332DB7EA7500805186 /* CodeListView.swift in Sources */,
 				5245058A2DB6AEB2008A8765 /* KeyChainView.swift in Sources */,
 				524505962DB6AF0F008A8765 /* NotificationsView.swift in Sources */,
 				5245056E2DB6ADA1008A8765 /* TakePictureView.swift in Sources */,

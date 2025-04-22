@@ -49,7 +49,7 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return
         }
 
-        self.codeFileKeys = dict.keys.sorted()
+        self.codeFileKeys = dict.keys.sorted { $0.lowercased() < $1.lowercased() }
         tableView.reloadData()
     }
 
@@ -80,7 +80,9 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        
+        cell.accessoryType = .none
+        
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:

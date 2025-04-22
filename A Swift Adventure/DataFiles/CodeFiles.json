@@ -1,5 +1,7 @@
 
 {
+    "AppDelegate": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Delegates/AppDelegate.swift",
+    "SceneDelegate": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Delegates/SceneDelegate.swift",
     "CodeViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift",
     "ViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/ViewController.swift",
     "AboutViewController": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/ViewControllers/AboutViewController.swift",
@@ -14,13 +16,10 @@
     "WidgetDemoProtocol": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Protocols/WidgetDemoProtocol.swift",
     "WidgetRegistry": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Managers/WidgetRegistry.swift",
     "VentureEngine": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Managers/VentureEngine.swift",
-    "AppDelegate": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Delegates/AppDelegate.swift",
-    "SceneDelegate": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Delegates/SceneDelegate.swift",
     "CodeOverlayManager": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/CodeFiles.json",
     "Extensions": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Extensions/Extensions.swift",
     "AuthorHTML": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/author.html",
     "CodeFiles": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/CodeFiles.json",
-    "Nodes": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/nodes.json",
     "nodes.json": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/DataFiles/nodes.json",
     "ButtonDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/ButtonDemo.swift",
     "TextDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/TextDemo.swift",
@@ -51,6 +50,4 @@
         "localNotifications": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/NotificationsView.swift",
         "haptic": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/HapticView.swift",
         "arKit": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/ARView.swift",
-        "none": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/EmptyView.swift"
-
 }
