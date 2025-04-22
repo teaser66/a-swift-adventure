@@ -60,12 +60,28 @@ class GameActionViewController: UIViewController, CodeShowable {
     }
 }
 
-
-
 struct ActionContentView: View {
     var action: ModalType
+    @State private var showCodeList = false
 
     var body: some View {
+        NavigationView {
+            contentView()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Code For This Action") {
+                            showCodeList = true
+                        }
+                    }
+                }
+                .sheet(isPresented: $showCodeList) {
+                    CodeListView(fileKeys: fileKeysFor(action))
+                }
+        }
+    }
+
+    @ViewBuilder
+    private func contentView() -> some View {
         switch action {
         case .arKit:
             ARView()
@@ -119,6 +135,63 @@ struct ActionContentView: View {
             Text("No action provided.")
         }
     }
+
+    private func fileKeysFor(_ action: ModalType) -> [String] {
+        switch action {
+        case .arKit:
+            return ["arKit"]
+        case .animations:
+            return ["animations"]
+        case .cacheImage:
+            return ["cacheImage"]
+        case .getAPI:
+            return ["getAPI"]
+        case .getCameraRoll:
+            return ["getCameraRoll"]
+        case .combineURLSession:
+            return ["combineURLSession"]
+        case .coreData:
+            return ["coreData"]
+        case .editImage:
+            return ["editImage"]
+        case .fileManager:
+            return ["fileManager"]
+        case .formFun:
+            return ["formFun"]
+        case .haptic:
+            return ["haptic"]
+        case .keychain:
+            return ["keychain"]
+        case .getLocation:
+            return ["getLocation"]
+        case .mapkit:
+            return ["mapkit"]
+        case .localNotifications:
+            return ["localNotifications"]
+        case .parseJSON:
+            return ["parseJSON"]
+        case .playMusic:
+            return ["playMusic", "MusicManager", "AudioEngine"]
+        case .postAPI:
+            return ["postAPI"]
+        case .recordAudio:
+            return ["recordAudio"]
+        case .recordVideo:
+            return ["recordVideo"]
+        case .saveToPhotos:
+            return ["saveToPhotos"]
+        case .takePicture:
+            return ["takePicture"]
+        case .themes:
+            return ["themes"]
+        case .userDefaults:
+            return ["userDefaults"]
+        case .none:
+            return []
+        }
+    }
+
 }
+
 
 

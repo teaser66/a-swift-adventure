@@ -9,21 +9,9 @@ import SwiftUI
 
 struct PlayMusicView: View {
     var body: some View {
-        NavigationView {
-            Text("🎵 Now playing music...")
-                .font(.title)
-                .padding()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Code For This Action") {
-                            showCode()
-                        }
-                    }
-                }
-        }
-    }
-
-    func showCode() {
-        
+        Text("🎵 Now playing music...")
+            .font(.title)
+            .padding()
     }
 }
+
