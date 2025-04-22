@@ -23,75 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "24AEA5B0-5974-4481-AD30-C128E107B7E0"
+            uuid = "DB6211EF-B98D-4D2A-B0FF-4DF3253D7B3C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "A Swift Adventure/ViewControllers/CodeViewController.swift"
+            filePath = "A Swift Adventure/Views/CodeListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "24AEA5B0-5974-4481-AD30-C128E107B7E0 - 67982e90bf920955"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "A_Swift_Adventure.CodeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "A Swift Adventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cymbidium80/iPhone%20Apps/Apps/A%20Swift%20Adventure/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
-               </Location>
-               <Location
-                  uuid = "24AEA5B0-5974-4481-AD30-C128E107B7E0 - 67982e90bf920955"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "A_Swift_Adventure.CodeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "A Swift Adventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cymbidium80/iPhone%20Apps/Apps/A%20Swift%20Adventure/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
-               </Location>
-               <Location
-                  uuid = "24AEA5B0-5974-4481-AD30-C128E107B7E0 - 67982e90bf920955"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "A_Swift_Adventure.CodeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "A Swift Adventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cymbidium80/iPhone%20Apps/Apps/A%20Swift%20Adventure/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
-               </Location>
-               <Location
-                  uuid = "24AEA5B0-5974-4481-AD30-C128E107B7E0 - 67982e90bf920955"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "A_Swift_Adventure.CodeViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "A Swift Adventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cymbidium80/iPhone%20Apps/Apps/A%20Swift%20Adventure/A%20Swift%20Adventure/ViewControllers/CodeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
-               </Location>
-            </Locations>
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

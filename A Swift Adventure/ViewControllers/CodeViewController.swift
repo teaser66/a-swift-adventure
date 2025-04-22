@@ -18,20 +18,16 @@ class CodeViewController: UIViewController {
     private var originalFileKey: String?
     private var isShowingOwnCode = false
     private var selfCodeButton: UIButton!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Load JSON
         loadURLsFromJSON()
         
         view.backgroundColor = .white
-        
         originalFileKey = fileKey // Store the original key
 
-        
         // Create styled buttons
         let closeButton = makeStyledButton(title: "Close", action: #selector(closeModal))
         selfCodeButton = makeStyledButton(title: "Code For This Modal", action: #selector(toggleCodeView))
@@ -50,9 +46,7 @@ class CodeViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(webView)
         
-        // Load JSON
-        loadURLsFromJSON()
-        
+        // Load the code if there's a file key
         if let key = fileKey, let urlString = codeURLs[key], let url = URL(string: urlString) {
             loadCodeFromURL(url)
         } else {
@@ -61,11 +55,13 @@ class CodeViewController: UIViewController {
         
         // Constraints
         NSLayoutConstraint.activate([
+            // Constraints for button stack
             buttonStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             buttonStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             buttonStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             buttonStack.heightAnchor.constraint(equalToConstant: 44),
             
+            // Constraints for web view (fill the rest of the view)
             webView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: 16),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -170,24 +166,28 @@ class CodeViewController: UIViewController {
     }
 }
 
+
 protocol CodeShowable {
     var codeKey: String { get }
 }
 
-
 struct CodeViewControllerWrapper: UIViewControllerRepresentable {
     let fileKey: String
 
-    func makeUIViewController(context: Context) -> UIViewController {
-        print("Creating CodeViewController with key: \(fileKey)")
-        let vc = CodeViewController()
-        vc.fileKey = fileKey
-        return vc
+    func makeUIViewController(context: Context) -> CodeViewController {
+        print("Creating CodeViewController with fileKey: \(fileKey)")  // Debug print
+        let codeVC = CodeViewController()
+        codeVC.fileKey = fileKey
+        return codeVC
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        print("Updating CodeViewController")
+    func updateUIViewController(_ uiViewController: CodeViewController, context: Context) {
+        // Update the CodeViewController if needed (e.g., if fileKey changes)
+        print("Updating CodeViewController with new fileKey: \(fileKey)")  // Debug print
+        uiViewController.fileKey = fileKey
     }
 }
+
+
 
 

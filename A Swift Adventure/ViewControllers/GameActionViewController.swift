@@ -65,19 +65,7 @@ struct ActionContentView: View {
     @State private var showCodeList = false
 
     var body: some View {
-        NavigationView {
             contentView()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Code For This Action") {
-                            showCodeList = true
-                        }
-                    }
-                }
-                .sheet(isPresented: $showCodeList) {
-                    CodeListView(fileKeys: fileKeysFor(action))
-                }
-        }
     }
 
     @ViewBuilder
@@ -190,8 +178,4 @@ struct ActionContentView: View {
             return []
         }
     }
-
 }
-
-
-

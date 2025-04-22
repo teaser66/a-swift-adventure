@@ -25,6 +25,7 @@
     "TextDemo": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Demos/TextDemo.swift",
     "VentureNode": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Models/VentureNode.swift",
     "AboutGameView": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Views/AboutGameView.swift",
+    "CodeListView": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/Views/CodeListView.swift",
     "playMusic": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/PlayMusicView.swift",
       "takePicture": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/TakePictureView.swift",
         "getCameraRoll": "https://raw.githubusercontent.com/teaser66/a-swift-adventure/refs/heads/develop/A%20Swift%20Adventure/GameViews/CameraRollView.swift",
