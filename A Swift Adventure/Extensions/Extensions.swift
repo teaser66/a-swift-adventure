@@ -33,3 +33,17 @@ extension String: Identifiable {
 extension ModalType: Identifiable {
     var id: String { self.rawValue }
 }
+
+// Find split view if ipad is trying ot force one
+extension UIViewController {
+    var nearestSplitViewController: UISplitViewController? {
+        var parentVC = self.parent
+        while parentVC != nil {
+            if let splitVC = parentVC as? UISplitViewController {
+                return splitVC
+            }
+            parentVC = parentVC?.parent
+        }
+        return nil
+    }
+}

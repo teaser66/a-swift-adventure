@@ -30,6 +30,7 @@ class ViewController: UIViewController, CodeShowable {
         
         let hostingController = UIHostingController(rootView: landingPageView)
         addChild(hostingController)
+        hostingController.modalPresentationStyle = .fullScreen 
         hostingController.view.frame = view.bounds
         hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(hostingController.view)
@@ -39,8 +40,17 @@ class ViewController: UIViewController, CodeShowable {
     // MARK: - Navigation Actions
     
     func openVentureViewController() {
-        let ventureVC = VentureViewController() 
-        navigationController?.pushViewController(ventureVC, animated: true)
+        
+       let ventureVC = VentureViewController()
+          ventureVC
+          if let navController = self.navigationController {
+          
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                  navController.pushViewController(ventureVC, animated: true)
+              }
+              
+          }
+        
     }
     
     func selectTab(_ index: Int) {

@@ -22,6 +22,8 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         setupTableView()
         loadCodeFileKeys()
+        
+        
     }
 
     func setupTableView() {

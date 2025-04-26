@@ -52,6 +52,7 @@ class WidgetDemoDetailsViewController: UIViewController, UITableViewDelegate, UI
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         cell.textLabel?.text = files[indexPath.row]
         //cell.accessoryType = .disclosureIndicator
+        //cell.detailTextLabel?.text = "test"
         return cell
     }
 

@@ -63,4 +63,11 @@ class VentureEngine {
 
         return Array(choices.shuffled().prefix(limit))
     }
+    
+    func reset() {
+        if let start = nodes["start"] {
+            currentNode = start
+            seenNodeIDs = [start.id]
+        }
+    }
 }

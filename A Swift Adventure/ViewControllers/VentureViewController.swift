@@ -79,7 +79,7 @@ struct VentureView: View {
     }
 
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
                 if let imageName = currentNode?.imageName, let image = UIImage(named: imageName) {
                     Image(uiImage: image)
@@ -108,11 +108,11 @@ struct VentureView: View {
                     }
                 }
             }
-            .navigationBarTitle("Venture Adventure", displayMode: .inline)
+            //.navigationBarTitle("Venture Adventure", displayMode: .inline)
             .onAppear {
                 loadCurrentNode()
             }
-        }
+        //}
     }
 
     private func loadCurrentNode() {

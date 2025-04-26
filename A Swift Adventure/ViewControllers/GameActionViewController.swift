@@ -54,6 +54,7 @@ class GameActionViewController: UIViewController, CodeShowable {
         let alert = UIAlertController(title: "Restart Adventure?", message: "Are you sure you want to reset?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive) { _ in
+            VentureEngine().reset()
             self.navigationController?.popToRootViewController(animated: true)
         })
         present(alert, animated: true)

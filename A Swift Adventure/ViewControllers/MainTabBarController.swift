@@ -9,6 +9,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    private let ventureNavigationDelegate = VentureNavigationDelegate()
     private let savedTabKey = "lastSelectedTab"
 
     override func viewDidLoad() {
@@ -16,6 +17,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         
         let tab1 = UINavigationController(rootViewController: ViewController())
+        tab1.delegate = ventureNavigationDelegate
         let tab2 = UINavigationController(rootViewController: BrowseViewController())
         let tab3 = UINavigationController(rootViewController: AboutViewController())
         
