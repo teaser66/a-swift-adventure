@@ -56,7 +56,7 @@ class VentureEngine {
         let unseenNodes = nodes.values.filter { !seenNodeIDs.contains($0.id) }
 
         let choices = unseenNodes.map { node in
-            // Ensure that prettyText is never nil, use a fallback if necessary
+            // Ensure that prettyText is never nil
             let choiceText = node.prettyText.isEmpty ? "Go to \(node.id)" : node.prettyText
             return VentureChoice(title: choiceText, nextNodeID: node.id, modalType: .none, prettyText: choiceText)
         }

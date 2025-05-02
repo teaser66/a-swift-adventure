@@ -61,7 +61,7 @@ class CodeViewController: UIViewController {
             buttonStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             buttonStack.heightAnchor.constraint(equalToConstant: 44),
             
-            // Constraints for web view (fill the rest of the view)
+            // Constraints for web view
             webView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: 16),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -175,15 +175,12 @@ struct CodeViewControllerWrapper: UIViewControllerRepresentable {
     let fileKey: String
 
     func makeUIViewController(context: Context) -> CodeViewController {
-        print("Creating CodeViewController with fileKey: \(fileKey)")  // Debug print
         let codeVC = CodeViewController()
         codeVC.fileKey = fileKey
         return codeVC
     }
 
     func updateUIViewController(_ uiViewController: CodeViewController, context: Context) {
-        // Update the CodeViewController if needed (e.g., if fileKey changes)
-        print("Updating CodeViewController with new fileKey: \(fileKey)")  // Debug print
         uiViewController.fileKey = fileKey
     }
 }

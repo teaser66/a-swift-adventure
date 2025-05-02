@@ -15,16 +15,15 @@ class ViewController: UIViewController, CodeShowable {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        // Create SwiftUI view and embed it in a UIHostingController
         let landingPageView = LandingPageView(
             onLetsGo: { [weak self] in
                 self?.openVentureViewController()
             },
             onBrowseWidgets: { [weak self] in
-                self?.selectTab(1) // Tab 2 (index starts from 0)
+                self?.selectTab(1)
             },
             onTakeMeToFiles: { [weak self] in
-                self?.selectTab(2) // Tab 3 (index starts from 0)
+                self?.selectTab(2)
             }
         )
         
@@ -59,7 +58,6 @@ class ViewController: UIViewController, CodeShowable {
     }
 }
 
-// SwiftUI View Struct (at the bottom of the view controller file)
 struct LandingPageView: View {
     
     var onLetsGo: () -> Void

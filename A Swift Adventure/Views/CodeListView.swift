@@ -17,8 +17,6 @@ struct CodeListView: View {
         NavigationView {
             List(fileKeys, id: \.self) { key in
                 Button(action: {
-                    // Debug: Check when the button is tapped
-                    print("Button tapped for key: \(key)")
                     
                     // Set the selected file key
                     selectedFileKey = key
@@ -31,7 +29,6 @@ struct CodeListView: View {
             }
             .navigationTitle("Select Code File")
             .sheet(isPresented: $isModalPresented) {
-                // Debug: Ensure fileKey is being passed correctly
                 if let fileKey = selectedFileKey {
                     CodeViewControllerWrapper(fileKey: fileKey)
                 } else {
@@ -40,7 +37,6 @@ struct CodeListView: View {
                 }
             }
             .onChange(of: selectedFileKey) { _, newValue in
-                // Debug: Log when selectedFileKey changes
                 print("selectedFileKey changed to: \(newValue ?? "nil")")
             }
         }

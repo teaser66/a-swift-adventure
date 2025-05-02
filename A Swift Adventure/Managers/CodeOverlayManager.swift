@@ -15,7 +15,7 @@ class CodeOverlayManager {
     private var button: UIButton?
 
     func setupButton(in window: UIWindow) {
-        guard button == nil else { return } // already added
+        guard button == nil else { return }
         
         let btn = UIButton(type: .system)
         btn.setTitle("Code", for: .normal)
@@ -60,7 +60,7 @@ class CodeOverlayManager {
                 print("No navigation controller found.")
             }
         } else {
-            // Continue with the modal presentation as usual
+            // Continue with the modal presentation
             let modal = CodeViewController()
             modal.fileKey = codeVC.codeKey
             topVC.present(modal, animated: true, completion: nil)

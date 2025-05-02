@@ -69,7 +69,6 @@ import SwiftUI
         plainTextLabel.text = "Plain Text"
         plainTextLabel.textAlignment = .center
         plainTextLabel.font = UIFont.systemFont(ofSize: 16)
-        // Set the initial text color here
         plainTextLabel.textColor = .blue
 
         styledTextLabel = UILabel()
